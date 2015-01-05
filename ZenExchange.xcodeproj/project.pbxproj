@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		11CC61A71A5A7CAA00FF7079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */; };
-		11CC61A91A5A7CAA00FF7079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61A81A5A7CAA00FF7079 /* ViewController.swift */; };
 		11CC61AC1A5A7CAA00FF7079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61AA1A5A7CAA00FF7079 /* Main.storyboard */; };
 		11CC61AE1A5A7CAA00FF7079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */; };
-		11CC61B11A5A7CAA00FF7079 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61AF1A5A7CAA00FF7079 /* LaunchScreen.xib */; };
 		11CC61BD1A5A7CAB00FF7079 /* ZenExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61BC1A5A7CAB00FF7079 /* ZenExchangeTests.swift */; };
+		11CC61C71A5A7DF000FF7079 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +28,12 @@
 		11CC61A11A5A7CAA00FF7079 /* ZenExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC61A51A5A7CAA00FF7079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11CC61A81A5A7CAA00FF7079 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11CC61AB1A5A7CAA00FF7079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		11CC61B01A5A7CAA00FF7079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		11CC61B61A5A7CAA00FF7079 /* ZenExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZenExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC61BB1A5A7CAB00FF7079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11CC61BC1A5A7CAB00FF7079 /* ZenExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenExchangeTests.swift; sourceTree = "<group>"; };
+		11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +75,8 @@
 		11CC61A31A5A7CAA00FF7079 /* ZenExchange */ = {
 			isa = PBXGroup;
 			children = (
-				11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */,
-				11CC61A81A5A7CAA00FF7079 /* ViewController.swift */,
-				11CC61AA1A5A7CAA00FF7079 /* Main.storyboard */,
-				11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */,
-				11CC61AF1A5A7CAA00FF7079 /* LaunchScreen.xib */,
+				11CC61CB1A5A7F9200FF7079 /* Classes */,
+				11CC61C81A5A7E0500FF7079 /* Resources */,
 				11CC61A41A5A7CAA00FF7079 /* Supporting Files */,
 			);
 			path = ZenExchange;
@@ -110,6 +105,64 @@
 				11CC61BB1A5A7CAB00FF7079 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11CC61C81A5A7E0500FF7079 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11CC61CD1A5A7FBA00FF7079 /* Images */,
+				11CC61CE1A5A7FC100FF7079 /* NIBs */,
+				11CC61CF1A5A7FF300FF7079 /* Sounds */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		11CC61CB1A5A7F9200FF7079 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				11CC61D01A5A801700FF7079 /* AppDelegate */,
+				11CC61CC1A5A7F9C00FF7079 /* Controllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		11CC61CC1A5A7F9C00FF7079 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		11CC61CD1A5A7FBA00FF7079 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */,
+				11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		11CC61CE1A5A7FC100FF7079 /* NIBs */ = {
+			isa = PBXGroup;
+			children = (
+				11CC61AA1A5A7CAA00FF7079 /* Main.storyboard */,
+			);
+			name = NIBs;
+			sourceTree = "<group>";
+		};
+		11CC61CF1A5A7FF300FF7079 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		11CC61D01A5A801700FF7079 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11CC61AC1A5A7CAA00FF7079 /* Main.storyboard in Resources */,
-				11CC61B11A5A7CAA00FF7079 /* LaunchScreen.xib in Resources */,
+				11CC61C71A5A7DF000FF7079 /* Default-568h@2x.png in Resources */,
 				11CC61AE1A5A7CAA00FF7079 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11CC61A91A5A7CAA00FF7079 /* ViewController.swift in Sources */,
 				11CC61A71A5A7CAA00FF7079 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,14 +294,6 @@
 				11CC61AB1A5A7CAA00FF7079 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		11CC61AF1A5A7CAA00FF7079 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				11CC61B01A5A7CAA00FF7079 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
