@@ -13,6 +13,7 @@
 		11CC61BD1A5A7CAB00FF7079 /* ZenExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61BC1A5A7CAB00FF7079 /* ZenExchangeTests.swift */; };
 		11CC61C71A5A7DF000FF7079 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */; };
 		11CC61D61A5A82C800FF7079 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61D51A5A82C800FF7079 /* MainViewController.swift */; };
+		11CC61D81A5ACA1800FF7079 /* Attribution in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61D71A5ACA1800FF7079 /* Attribution */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		11CC61BC1A5A7CAB00FF7079 /* ZenExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenExchangeTests.swift; sourceTree = "<group>"; };
 		11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		11CC61D51A5A82C800FF7079 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		11CC61D71A5ACA1800FF7079 /* Attribution */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Attribution; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */,
 				11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */,
+				11CC61D71A5ACA1800FF7079 /* Attribution */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CC61D81A5ACA1800FF7079 /* Attribution in Resources */,
 				11CC61AC1A5A7CAA00FF7079 /* Main.storyboard in Resources */,
 				11CC61C71A5A7DF000FF7079 /* Default-568h@2x.png in Resources */,
 				11CC61AE1A5A7CAA00FF7079 /* Images.xcassets in Resources */,
