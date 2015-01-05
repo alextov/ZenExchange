@@ -26,51 +26,6 @@
                                     <rect key="frame" x="416" y="350" width="456" height="316"/>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kT-bp-rz5" userLabel="UA flag wrapper">
-                                <rect key="frame" x="0.0" y="20" width="300" height="100"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UA" translatesAutoresizingMaskIntoConstraints="NO" id="JaI-oS-V25" userLabel="Ukrainian flag">
-                                        <rect key="frame" x="100" y="0.0" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" secondItem="JaI-oS-V25" secondAttribute="width" multiplier="1:1" id="pw7-BU-3Jb"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" secondItem="JaI-oS-V25" secondAttribute="height" id="1X2-KI-YTV"/>
-                                    <constraint firstAttribute="height" constant="100" id="E9k-aJ-gLX"/>
-                                    <constraint firstAttribute="centerY" secondItem="JaI-oS-V25" secondAttribute="centerY" id="EHc-zu-hmI"/>
-                                    <constraint firstAttribute="centerX" secondItem="JaI-oS-V25" secondAttribute="centerX" id="bfo-dw-rMP"/>
-                                </constraints>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="E9k-aJ-gLX"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6t-01-WlG" userLabel="RU flag wrapper">
-                                <rect key="frame" x="300" y="20" width="300" height="100"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RU" translatesAutoresizingMaskIntoConstraints="NO" id="oE8-ly-jcl" userLabel="Russian flag">
-                                        <rect key="frame" x="100" y="0.0" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="oE8-ly-jcl" secondAttribute="height" multiplier="1:1" id="fF0-92-8Gr"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="VAl-aY-Wpo"/>
-                                    <constraint firstAttribute="centerY" secondItem="oE8-ly-jcl" secondAttribute="centerY" id="Xtm-ZW-zTJ"/>
-                                    <constraint firstAttribute="centerX" secondItem="oE8-ly-jcl" secondAttribute="centerX" id="fox-th-DW1"/>
-                                    <constraint firstItem="oE8-ly-jcl" firstAttribute="height" secondItem="n6t-01-WlG" secondAttribute="height" id="h08-15-CK2"/>
-                                </constraints>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="VAl-aY-Wpo"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular"/>
-                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKl-ha-fqe" userLabel="UAH per USD wrapper">
                                 <rect key="frame" x="16" y="119" width="200" height="120"/>
                                 <subviews>
@@ -345,6 +300,40 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UA" translatesAutoresizingMaskIntoConstraints="NO" id="JaI-oS-V25" userLabel="Ukrainian flag">
+                                <rect key="frame" x="133" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="oH8-dd-4La"/>
+                                    <constraint firstAttribute="width" secondItem="JaI-oS-V25" secondAttribute="height" multiplier="1:1" id="qM4-96-GnN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RU" translatesAutoresizingMaskIntoConstraints="NO" id="oE8-ly-jcl" userLabel="Russian flag">
+                                <rect key="frame" x="367" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oE8-ly-jcl" secondAttribute="height" multiplier="1:1" id="JVD-GG-aU6"/>
+                                </constraints>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMi-q5-9Dz" userLabel="Spacer">
+                                <rect key="frame" x="0.0" y="57" width="133" height="26"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="WLT-yh-yeE"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-w1-T4E" userLabel="Spacer">
+                                <rect key="frame" x="467" y="57" width="133" height="26"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="5qC-sO-ZLl"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvx-lT-cTO" userLabel="Spacer">
+                                <rect key="frame" x="233" y="57" width="134" height="26"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Sqd-Fq-l31"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -353,29 +342,36 @@
                             <constraint firstItem="Ook-DX-Ri8" firstAttribute="top" secondItem="XPP-FN-jVH" secondAttribute="bottom" constant="14" id="3sb-YG-wX8">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="2kT-bp-rz5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ATR-GI-wfa"/>
+                            <constraint firstItem="JaI-oS-V25" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9fq-wT-eun"/>
                             <constraint firstAttribute="width" secondItem="XPP-FN-jVH" secondAttribute="width" id="BxY-kY-IXi"/>
                             <constraint firstItem="our-ao-ynK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="EtA-n4-aFN"/>
                             <constraint firstAttribute="centerX" secondItem="lKl-ha-fqe" secondAttribute="centerX" id="I55-O9-l0E"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="n6t-01-WlG" secondAttribute="trailing" constant="-16" id="ImF-6d-l5f"/>
-                            <constraint firstItem="n6t-01-WlG" firstAttribute="leading" secondItem="2kT-bp-rz5" secondAttribute="trailing" id="JFf-ux-YyM"/>
+                            <constraint firstItem="JaI-oS-V25" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="JFw-pl-qaP"/>
+                            <constraint firstItem="JaI-oS-V25" firstAttribute="centerY" secondItem="oE8-ly-jcl" secondAttribute="centerY" id="JIS-Jd-Obf"/>
+                            <constraint firstItem="hvx-lT-cTO" firstAttribute="width" secondItem="aMi-q5-9Dz" secondAttribute="width" id="Kno-pI-rXw"/>
                             <constraint firstItem="XPP-FN-jVH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kp2-wI-ca3">
                                 <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                             </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="WmT-w1-T4E" secondAttribute="trailing" constant="-16" id="NQP-Dk-I9R"/>
                             <constraint firstAttribute="centerX" secondItem="Ook-DX-Ri8" secondAttribute="centerX" constant="-9" id="Pe1-Ic-rlr">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="our-ao-ynK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Rvj-zI-7kL"/>
-                            <constraint firstItem="n6t-01-WlG" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="ShC-tt-ejr"/>
+                            <constraint firstItem="JaI-oS-V25" firstAttribute="leading" secondItem="aMi-q5-9Dz" secondAttribute="trailing" id="SzG-1D-q2Z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="our-ao-ynK" secondAttribute="bottom" id="Tyo-fA-6Mc"/>
-                            <constraint firstItem="n6t-01-WlG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="USi-OI-btR"/>
                             <constraint firstItem="Ook-DX-Ri8" firstAttribute="width" secondItem="XPP-FN-jVH" secondAttribute="width" id="V9W-Bl-ixM"/>
-                            <constraint firstItem="n6t-01-WlG" firstAttribute="width" secondItem="2kT-bp-rz5" secondAttribute="width" id="Zmz-ek-Iz9"/>
+                            <constraint firstItem="hvx-lT-cTO" firstAttribute="leading" secondItem="JaI-oS-V25" secondAttribute="trailing" id="VCZ-De-FrU"/>
+                            <constraint firstItem="aMi-q5-9Dz" firstAttribute="centerY" secondItem="JaI-oS-V25" secondAttribute="centerY" id="VY4-QH-xTs"/>
+                            <constraint firstItem="hvx-lT-cTO" firstAttribute="centerY" secondItem="JaI-oS-V25" secondAttribute="centerY" id="XUJ-cj-prU"/>
+                            <constraint firstItem="oE8-ly-jcl" firstAttribute="leading" secondItem="hvx-lT-cTO" secondAttribute="trailing" id="ZOu-rF-jzX"/>
                             <constraint firstItem="XPP-FN-jVH" firstAttribute="top" secondItem="lKl-ha-fqe" secondAttribute="bottom" constant="20" id="b6H-iT-qxY"/>
                             <constraint firstAttribute="centerX" secondItem="XPP-FN-jVH" secondAttribute="centerX" id="bNc-UB-eq5"/>
+                            <constraint firstItem="WmT-w1-T4E" firstAttribute="centerY" secondItem="oE8-ly-jcl" secondAttribute="centerY" id="esB-Rk-Ybq"/>
+                            <constraint firstItem="JaI-oS-V25" firstAttribute="height" secondItem="oE8-ly-jcl" secondAttribute="height" id="f7y-M3-mEU"/>
+                            <constraint firstItem="aMi-q5-9Dz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="iEZ-4I-tpp"/>
+                            <constraint firstItem="WmT-w1-T4E" firstAttribute="leading" secondItem="oE8-ly-jcl" secondAttribute="trailing" id="m42-aB-OB7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="our-ao-ynK" secondAttribute="trailing" constant="-16" id="o3i-WZ-Qi7"/>
-                            <constraint firstItem="2kT-bp-rz5" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="rEO-9s-KCt"/>
-                            <constraint firstItem="2kT-bp-rz5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xWl-qN-X8Y"/>
+                            <constraint firstItem="hvx-lT-cTO" firstAttribute="width" secondItem="WmT-w1-T4E" secondAttribute="width" id="xJ2-l3-4eP"/>
                             <constraint firstItem="Ook-DX-Ri8" firstAttribute="height" secondItem="XPP-FN-jVH" secondAttribute="height" id="yLh-ow-vV8"/>
                         </constraints>
                         <variation key="default">
