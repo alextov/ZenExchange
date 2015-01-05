@@ -29,7 +29,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKl-ha-fqe" userLabel="UAH per USD wrapper">
                                 <rect key="frame" x="16" y="119" width="200" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP4-oq-iX2" userLabel="UAH per USD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="–" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP4-oq-iX2" userLabel="UAH per USD">
                                         <rect key="frame" x="-13" y="15" width="227" height="68"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -49,6 +49,9 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="181" y="2" width="40" height="96"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
@@ -153,7 +156,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPP-FN-jVH" userLabel="(pivot) UAH per EUR wrapper">
                                 <rect key="frame" x="16" y="240" width="200" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqJ-4x-PlE" userLabel="UAH per EUR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="–" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqJ-4x-PlE" userLabel="UAH per EUR">
                                         <rect key="frame" x="-20" y="15" width="227" height="68"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -173,6 +176,9 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="181" y="2" width="40" height="96"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
@@ -301,7 +307,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-DX-Ri8" userLabel="USD per barel wrapper">
                                 <rect key="frame" x="16" y="359" width="200" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uay-w0-B4w" userLabel="USD per barel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="–" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uay-w0-B4w" userLabel="USD per barel">
                                         <rect key="frame" x="-14" y="26" width="227" height="68"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -321,6 +327,9 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="181" y="2" width="40" height="96"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
@@ -637,10 +646,18 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="dollarsPerBarrelCommentLabel" destination="BNi-ne-rV2" id="YMB-yK-tq8"/>
+                        <outlet property="dollarsPerBarrelLabel" destination="Uay-w0-B4w" id="XUb-HB-tfK"/>
+                        <outlet property="tugriksPerDollarCommentLabel" destination="95K-Jp-lCy" id="qz2-n2-9nF"/>
+                        <outlet property="tugriksPerDollarLabel" destination="XP4-oq-iX2" id="4JM-df-re7"/>
+                        <outlet property="tugriksPerEuroCommentLabel" destination="EeP-nF-3pT" id="Vhc-7f-JmA"/>
+                        <outlet property="tugriksPerEuroLabel" destination="yqJ-4x-PlE" id="FpJ-9W-y2d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379.5" y="409"/>
+            <point key="canvasLocation" x="1465.5" y="318.75"/>
         </scene>
     </scenes>
     <resources>
