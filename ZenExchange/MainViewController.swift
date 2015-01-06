@@ -73,6 +73,7 @@ class MainViewController: UIViewController {
         
         var error: NSError?
         audioPlayer = AVAudioPlayer(contentsOfURL: bgmusic, error: &error)
+        audioPlayer.numberOfLoops = -1
         audioPlayer.prepareToPlay()
         audioPlayer.play()
 
@@ -102,6 +103,13 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func backgroundTapped(sender: AnyObject) {
+        if audioPlayer.playing {
+            self.audioPlayer.pause()
+        } else {
+            self.audioPlayer.play()
+        }
+    }
     
     // MARK: - Private methods
     
@@ -171,6 +179,10 @@ class MainViewController: UIViewController {
                 dummyText.removeObjectAtIndex(index)
             }
         }
+    }
+    
+    func executeWithDelay(delay: Double, callback: () -> ()) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), callback)
     }
 
 }

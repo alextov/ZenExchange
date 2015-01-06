@@ -18,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="our-ao-ynK" userLabel="Background Image">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="our-ao-ynK" userLabel="Background Image">
                                 <rect key="frame" x="449" y="296" width="156" height="246"/>
                                 <color key="backgroundColor" red="0.1137254902" green="1" blue="0.16862745100000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="v3g-q8-VYi"/>
+                                </connections>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKl-ha-fqe" userLabel="UAH per USD wrapper">
                                 <rect key="frame" x="16" y="119" width="200" height="120"/>
@@ -668,6 +671,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="i9o-co-9tq">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="BYZ-38-t0r" id="f6l-eP-YLH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1465.5" y="318.75"/>
         </scene>
