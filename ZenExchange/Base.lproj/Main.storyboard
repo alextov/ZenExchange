@@ -52,6 +52,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="RR3-ox-WHl"/>
+                                        </connections>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="гривен за доллар" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95K-Jp-lCy" userLabel="Supporting text">
                                         <rect key="frame" x="14" y="91" width="173" height="21"/>
@@ -76,6 +79,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="314" y="391" width="173" height="21"/>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="JdO-Zb-6CT"/>
+                                        </connections>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -154,6 +160,9 @@
                                         <include reference="peB-6y-qYN"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="APu-5f-nf4"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPP-FN-jVH" userLabel="(pivot) UAH per EUR wrapper">
                                 <rect key="frame" x="16" y="240" width="200" height="120"/>
@@ -181,6 +190,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="314" y="391" width="173" height="21"/>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="vK9-IT-klu"/>
+                                        </connections>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqJ-4x-PlE" userLabel="UAH per EUR">
                                         <rect key="frame" x="-20" y="15" width="227" height="68"/>
@@ -206,6 +218,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="gi4-7O-kc9"/>
+                                        </connections>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -308,6 +323,9 @@
                                         <include reference="unQ-kX-yWD"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="mB8-9n-3iU"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-DX-Ri8" userLabel="USD per barel wrapper">
                                 <rect key="frame" x="16" y="359" width="200" height="120"/>
@@ -336,6 +354,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="Khd-Yy-0PB"/>
+                                        </connections>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="долларов за баррель" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNi-ne-rV2" userLabel="Supporting text">
                                         <rect key="frame" x="14" y="91" width="173" height="21"/>
@@ -360,6 +381,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="314" y="391" width="173" height="21"/>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="Sn5-05-dm6"/>
+                                        </connections>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -432,6 +456,9 @@
                                         <include reference="yVw-1p-nCx"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="GJM-tR-Vo4"/>
+                                </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMi-q5-9Dz" userLabel="Spacer">
                                 <rect key="frame" x="0.0" y="57" width="133" height="26"/>
@@ -439,6 +466,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="WLT-yh-yeE"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="JOs-F5-EB4"/>
+                                </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-w1-T4E" userLabel="Spacer">
                                 <rect key="frame" x="467" y="57" width="133" height="26"/>
@@ -446,6 +476,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="5qC-sO-ZLl"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="GZO-AK-lf1"/>
+                                </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvx-lT-cTO" userLabel="Spacer">
                                 <rect key="frame" x="233" y="57" width="134" height="26"/>
@@ -453,6 +486,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="Sqd-Fq-l31"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="sCC-0S-z2c"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BJ-H6-rsQ" userLabel="Ukrainian flag">
                                 <rect key="frame" x="133" y="20" width="100" height="100"/>
