@@ -169,12 +169,12 @@ class MainViewController: UIViewController {
     func showResults(#dollarQuote: Double, euroQuote: Double, oilQuote: Double) {
         dispatch_async(dispatch_get_main_queue()) {
 //            println("\(dollarQuote)\t\(euroQuote)\t\(oilQuote)")
-            self.tugriksPerDollarLabel.text = String(format: "%.2f", dollarQuote)
-            self.tugriksPerEuroLabel.text = String(format: "%.2f", euroQuote)
-            self.dollarsPerBarrelLabel.text = String(format: "%.2f", oilQuote)
-            self.tugriksPerDollarCommentLabel.text = self.tugriksPerDollarComment
-            self.tugriksPerEuroCommentLabel.text = self.tugriksPerEuroComment
-            self.dollarsPerBarrelCommentLabel.text = self.dollarsPerBarrelComment
+            self.setTextAnimated(self.tugriksPerDollarLabel, text: String(format: "%.2f", dollarQuote))
+            self.setTextAnimated(self.tugriksPerEuroLabel, text: String(format: "%.2f", euroQuote))
+            self.setTextAnimated(self.dollarsPerBarrelLabel, text: String(format: "%.2f", oilQuote))
+            self.setTextAnimated(self.tugriksPerDollarCommentLabel, text: self.tugriksPerDollarComment)
+            self.setTextAnimated(self.tugriksPerEuroCommentLabel, text: self.tugriksPerEuroComment)
+            self.setTextAnimated(self.dollarsPerBarrelCommentLabel, text: self.dollarsPerBarrelComment)
         }
     }
     
@@ -182,15 +182,25 @@ class MainViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             var dummyText: NSMutableArray = ["я чото п?", "guru meditation", "при пожаре звони 101", "не паникуй!", "в килобайте 1000 байт", "буду через 15 минут", "кто здесь?", "ж-ж-ж-ж-ж", "привет, как дела?", "my other car is a cdr", "скорее... эх, тоска"]
             for label in [self.tugriksPerDollarLabel, self.tugriksPerEuroLabel, self.dollarsPerBarrelLabel] {
-                label.text = ""
+                self.setTextAnimated(label, text: "")
             }
             for label in [self.tugriksPerDollarCommentLabel, self.tugriksPerEuroCommentLabel, self.dollarsPerBarrelCommentLabel] {
                 let count = UInt32(dummyText.count)
                 let index = Int(arc4random_uniform(count))
-                label.text = dummyText[index] as? String ?? ""
+                let text = dummyText[index] as? String ?? ""
+                self.setTextAnimated(label, text: text)
                 dummyText.removeObjectAtIndex(index)
             }
         }
+    }
+    
+    func setTextAnimated(label: UILabel, text: String) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.type = kCATransitionFade
+        animation.duration = 0.75
+        label.layer.addAnimation(animation, forKey: "kCATransitionFade")
+        label.text = text
     }
     
     func setRandomBackground() {
