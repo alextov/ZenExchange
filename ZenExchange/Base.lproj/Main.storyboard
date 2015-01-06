@@ -696,6 +696,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="our-ao-ynK" id="YG3-ho-eLi"/>
                         <outlet property="dollarsPerBarrelCommentLabel" destination="BNi-ne-rV2" id="YMB-yK-tq8"/>
                         <outlet property="dollarsPerBarrelLabel" destination="Uay-w0-B4w" id="XUb-HB-tfK"/>
                         <outlet property="russianFlagButton" destination="2L2-w9-LLe" id="2o5-Ms-DdG"/>

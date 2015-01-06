@@ -38,8 +38,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tugriksPerEuroCommentLabel: UILabel!
     @IBOutlet weak var dollarsPerBarrelCommentLabel: UILabel!
     
-    var currentTugrik: TugrikSymbol! = .UAH
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    var currentBackgroundImageIndex: Int! = 0
     
+    var currentTugrik: TugrikSymbol! = .UAH
     var tugrikName: String! {
         get {
             return tugriks[self.currentTugrik]!.name
@@ -66,6 +68,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Set random background image.
+        setRandomBackground()
+        
+        // Play music.
         let bgmusic = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("bgmusic", ofType: "mp3")!)
 
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, error: nil)
@@ -75,9 +82,12 @@ class MainViewController: UIViewController {
         audioPlayer = AVAudioPlayer(contentsOfURL: bgmusic, error: &error)
         audioPlayer.numberOfLoops = -1
         audioPlayer.prepareToPlay()
-        audioPlayer.play()
-
+//        audioPlayer.play()
+        
+        // Load quote values.
         var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
+        
+        // While these are loading, show some dummy messages to entertain user.
         showDummyResults()
     }
 
@@ -93,6 +103,7 @@ class MainViewController: UIViewController {
         if currentTugrik != .UAH {
             currentTugrik = .UAH
             fetchQuotes()
+            setRandomBackground()
         }
     }
 
@@ -100,6 +111,7 @@ class MainViewController: UIViewController {
         if currentTugrik != .RUB {
             currentTugrik = .RUB
             fetchQuotes()
+            setRandomBackground()
         }
     }
     
@@ -179,6 +191,29 @@ class MainViewController: UIViewController {
                 dummyText.removeObjectAtIndex(index)
             }
         }
+    }
+    
+    func setRandomBackground() {
+        // FIXME: rework this pile of filth
+        let backgroundCount = 3
+        var availableBackgroundNumbers = [Int]()
+        for index in 1...backgroundCount {
+            if self.currentBackgroundImageIndex != index {
+                availableBackgroundNumbers.append(index)
+            }
+        }
+        let index = Int(arc4random_uniform(UInt32(backgroundCount) - 1))
+        let backgroundNumber = availableBackgroundNumbers[index]
+        self.currentBackgroundImageIndex = backgroundNumber
+        let backgroundName = "background" + String(backgroundNumber)
+        let backgroundImage = UIImage(named: backgroundName)
+        
+        self.backgroundImageView.alpha = 0.5
+        UIImageView.beginAnimations(nil, context: nil)
+        UIImageView.setAnimationDuration(0.6)
+        self.backgroundImageView.alpha = 1.0
+        self.backgroundImageView.image = backgroundImage
+        UIImageView.commitAnimations()
     }
     
     func executeWithDelay(delay: Double, callback: () -> ()) {
