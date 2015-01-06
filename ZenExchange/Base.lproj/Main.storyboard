@@ -4,7 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -47,11 +46,14 @@
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="80"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="гривен за доллар" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95K-Jp-lCy" userLabel="Supporting text">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="гривен за доллар" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95K-Jp-lCy" userLabel="Supporting text">
                                         <rect key="frame" x="14" y="91" width="173" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -89,6 +91,7 @@
                                     <constraint firstItem="95K-Jp-lCy" firstAttribute="top" secondItem="XP4-oq-iX2" secondAttribute="bottom" constant="1" id="MIp-OZ-48f">
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
+                                    <constraint firstItem="XP4-oq-iX2" firstAttribute="width" secondItem="lKl-ha-fqe" secondAttribute="width" id="MwC-Rj-UOK"/>
                                     <constraint firstItem="95K-Jp-lCy" firstAttribute="top" secondItem="XP4-oq-iX2" secondAttribute="bottom" constant="59" id="SBd-79-Y1x">
                                         <variation key="heightClass=compact" constant="0.0"/>
                                     </constraint>
@@ -102,6 +105,7 @@
                                     <constraint firstAttribute="centerX" secondItem="95K-Jp-lCy" secondAttribute="centerX" constant="-200.5" id="gYX-WQ-PsZ">
                                         <variation key="heightClass=compact" constant="0.0"/>
                                     </constraint>
+                                    <constraint firstItem="95K-Jp-lCy" firstAttribute="width" secondItem="lKl-ha-fqe" secondAttribute="width" id="peB-6y-qYN"/>
                                     <constraint firstAttribute="centerY" secondItem="XP4-oq-iX2" secondAttribute="centerY" constant="-47.5" id="ypd-mR-Uuh">
                                         <variation key="heightClass=compact" constant="10"/>
                                     </constraint>
@@ -111,6 +115,7 @@
                                         <exclude reference="4Ba-ZX-RxH"/>
                                         <exclude reference="CRx-qL-KMV"/>
                                         <exclude reference="Dh8-Um-4fT"/>
+                                        <exclude reference="MwC-Rj-UOK"/>
                                         <exclude reference="dGu-du-svV"/>
                                         <exclude reference="fAM-by-ZHr"/>
                                         <exclude reference="ypd-mR-Uuh"/>
@@ -120,6 +125,7 @@
                                         <exclude reference="SBd-79-Y1x"/>
                                         <exclude reference="T1U-Dj-gbM"/>
                                         <exclude reference="gYX-WQ-PsZ"/>
+                                        <exclude reference="peB-6y-qYN"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
@@ -142,14 +148,40 @@
                                     <mask key="constraints">
                                         <include reference="CRx-qL-KMV"/>
                                         <include reference="Dh8-Um-4fT"/>
+                                        <include reference="MwC-Rj-UOK"/>
                                         <include reference="MIp-OZ-48f"/>
                                         <include reference="T1U-Dj-gbM"/>
+                                        <include reference="peB-6y-qYN"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPP-FN-jVH" userLabel="(pivot) UAH per EUR wrapper">
                                 <rect key="frame" x="16" y="240" width="200" height="120"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="гривен за евро" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeP-nF-3pT" userLabel="Supporting text">
+                                        <rect key="frame" x="14" y="91" width="173" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="39" y="89" width="122" height="21"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="214" y="441" width="173" height="21"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="114" y="358" width="173" height="21"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="114" y="274" width="173" height="21"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="314" y="274" width="173" height="21"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="314" y="391" width="173" height="21"/>
+                                        </variation>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqJ-4x-PlE" userLabel="UAH per EUR">
                                         <rect key="frame" x="-20" y="15" width="227" height="68"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
@@ -175,32 +207,9 @@
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="гривен за евро" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeP-nF-3pT" userLabel="Supporting text">
-                                        <rect key="frame" x="14" y="91" width="173" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="39" y="89" width="122" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="214" y="441" width="173" height="21"/>
-                                        </variation>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="114" y="358" width="173" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="114" y="274" width="173" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="314" y="274" width="173" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="314" y="391" width="173" height="21"/>
-                                        </variation>
-                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="EeP-nF-3pT" firstAttribute="width" secondItem="XPP-FN-jVH" secondAttribute="width" id="0x5-r4-8XA"/>
                                     <constraint firstAttribute="centerX" secondItem="EeP-nF-3pT" secondAttribute="centerX" id="3iF-kY-kuc"/>
                                     <constraint firstItem="EeP-nF-3pT" firstAttribute="top" secondItem="yqJ-4x-PlE" secondAttribute="bottom" id="7ot-5f-Rkq"/>
                                     <constraint firstAttribute="centerY" secondItem="yqJ-4x-PlE" secondAttribute="centerY" id="D2h-I2-K51">
@@ -211,6 +220,7 @@
                                     </constraint>
                                     <constraint firstAttribute="centerX" secondItem="yqJ-4x-PlE" secondAttribute="centerX" id="Ge5-qS-Dtl"/>
                                     <constraint firstAttribute="centerX" secondItem="EeP-nF-3pT" secondAttribute="centerX" id="H4v-bk-JvV"/>
+                                    <constraint firstItem="yqJ-4x-PlE" firstAttribute="width" secondItem="XPP-FN-jVH" secondAttribute="width" id="HD5-dA-bKM"/>
                                     <constraint firstAttribute="height" constant="120" id="HKF-u9-oI3"/>
                                     <constraint firstItem="yqJ-4x-PlE" firstAttribute="top" secondItem="XPP-FN-jVH" secondAttribute="top" constant="20" symbolic="YES" id="OCP-Yn-dIa"/>
                                     <constraint firstItem="EeP-nF-3pT" firstAttribute="top" secondItem="yqJ-4x-PlE" secondAttribute="bottom" constant="7" id="RLk-8U-ENS">
@@ -246,11 +256,13 @@
                                         <exclude reference="D2h-I2-K51"/>
                                         <exclude reference="DWy-bj-vcx"/>
                                         <exclude reference="Ge5-qS-Dtl"/>
+                                        <exclude reference="HD5-dA-bKM"/>
                                         <exclude reference="OCP-Yn-dIa"/>
                                         <exclude reference="YxD-0v-xzn"/>
                                         <exclude reference="bYd-hZ-EmA"/>
                                         <exclude reference="g8P-d5-C05"/>
                                         <exclude reference="q7i-Ua-WOR"/>
+                                        <exclude reference="0x5-r4-8XA"/>
                                         <exclude reference="3iF-kY-kuc"/>
                                         <exclude reference="7ot-5f-Rkq"/>
                                         <exclude reference="H4v-bk-JvV"/>
@@ -288,7 +300,9 @@
                                     <mask key="constraints">
                                         <include reference="hgF-CC-bg5"/>
                                         <include reference="D2h-I2-K51"/>
+                                        <include reference="HD5-dA-bKM"/>
                                         <include reference="bYd-hZ-EmA"/>
+                                        <include reference="0x5-r4-8XA"/>
                                         <include reference="RLk-8U-ENS"/>
                                         <exclude reference="gbA-pH-jma"/>
                                         <include reference="unQ-kX-yWD"/>
@@ -323,7 +337,7 @@
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="долларов за баррель" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNi-ne-rV2" userLabel="Supporting text">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="долларов за баррель" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNi-ne-rV2" userLabel="Supporting text">
                                         <rect key="frame" x="14" y="91" width="173" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -353,6 +367,7 @@
                                     <constraint firstAttribute="centerX" secondItem="BNi-ne-rV2" secondAttribute="centerX" constant="-0.5" id="6ss-g9-1Be">
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
+                                    <constraint firstItem="Uay-w0-B4w" firstAttribute="width" secondItem="Ook-DX-Ri8" secondAttribute="width" id="7Cd-VD-bZR"/>
                                     <constraint firstAttribute="centerY" secondItem="Uay-w0-B4w" secondAttribute="centerY" constant="-10" id="I1p-XY-NHw">
                                         <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                     </constraint>
@@ -371,9 +386,11 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstItem="BNi-ne-rV2" firstAttribute="top" secondItem="Uay-w0-B4w" secondAttribute="bottom" id="xzr-o8-C5f"/>
+                                    <constraint firstAttribute="width" secondItem="BNi-ne-rV2" secondAttribute="width" id="yVw-1p-nCx"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="7Cd-VD-bZR"/>
                                         <exclude reference="I1p-XY-NHw"/>
                                         <exclude reference="NXC-Nz-vZ5"/>
                                         <exclude reference="RhK-MC-oJK"/>
@@ -386,6 +403,7 @@
                                         <exclude reference="ZmM-Qs-UpR"/>
                                         <exclude reference="tOU-tv-8cO"/>
                                         <exclude reference="xzr-o8-C5f"/>
+                                        <exclude reference="yVw-1p-nCx"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
@@ -406,10 +424,12 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
+                                        <include reference="7Cd-VD-bZR"/>
                                         <include reference="I1p-XY-NHw"/>
                                         <include reference="fWf-JE-NO4"/>
                                         <include reference="6ss-g9-1Be"/>
                                         <include reference="tOU-tv-8cO"/>
+                                        <include reference="yVw-1p-nCx"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -511,7 +531,6 @@
                             </constraint>
                             <constraint firstItem="XPP-FN-jVH" firstAttribute="top" secondItem="lKl-ha-fqe" secondAttribute="bottom" constant="20" id="b6H-iT-qxY"/>
                             <constraint firstAttribute="centerX" secondItem="XPP-FN-jVH" secondAttribute="centerX" id="bNc-UB-eq5"/>
-                            <constraint firstItem="7BJ-H6-rsQ" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="e6G-vM-3go"/>
                             <constraint firstAttribute="centerX" secondItem="XPP-FN-jVH" secondAttribute="centerX" constant="-16" id="eR9-q6-ZbE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ook-DX-Ri8" secondAttribute="trailing" constant="-32" id="ffJ-jF-9Cd">
                                 <variation key="heightClass=compact" constant="-16"/>
@@ -643,10 +662,12 @@
                     <connections>
                         <outlet property="dollarsPerBarrelCommentLabel" destination="BNi-ne-rV2" id="YMB-yK-tq8"/>
                         <outlet property="dollarsPerBarrelLabel" destination="Uay-w0-B4w" id="XUb-HB-tfK"/>
+                        <outlet property="russianFlagButton" destination="2L2-w9-LLe" id="2o5-Ms-DdG"/>
                         <outlet property="tugriksPerDollarCommentLabel" destination="95K-Jp-lCy" id="qz2-n2-9nF"/>
                         <outlet property="tugriksPerDollarLabel" destination="XP4-oq-iX2" id="4JM-df-re7"/>
                         <outlet property="tugriksPerEuroCommentLabel" destination="EeP-nF-3pT" id="Vhc-7f-JmA"/>
                         <outlet property="tugriksPerEuroLabel" destination="yqJ-4x-PlE" id="FpJ-9W-y2d"/>
+                        <outlet property="ukrainianFlagButton" destination="7BJ-H6-rsQ" id="JsN-Af-xqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
