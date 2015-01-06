@@ -14,6 +14,7 @@
 		11CC61C71A5A7DF000FF7079 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */; };
 		11CC61D61A5A82C800FF7079 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61D51A5A82C800FF7079 /* MainViewController.swift */; };
 		11CC61D81A5ACA1800FF7079 /* Attribution in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61D71A5ACA1800FF7079 /* Attribution */; };
+		11CC61DB1A5AE34100FF7079 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		11CC61D51A5A82C800FF7079 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11CC61D71A5ACA1800FF7079 /* Attribution */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Attribution; sourceTree = "<group>"; };
+		11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				11CC61D01A5A801700FF7079 /* AppDelegate */,
 				11CC61CC1A5A7F9C00FF7079 /* Controllers */,
+				11CC61D91A5ADF1400FF7079 /* Utils */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -169,6 +172,14 @@
 				11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */,
 			);
 			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		11CC61D91A5ADF1400FF7079 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CC61DB1A5AE34100FF7079 /* SwiftyJSON.swift in Sources */,
 				11CC61A71A5A7CAA00FF7079 /* AppDelegate.swift in Sources */,
 				11CC61D61A5A82C800FF7079 /* MainViewController.swift in Sources */,
 			);
