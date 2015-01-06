@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 let YQL_QUERY: String = "https://query.yahooapis.com/v1/public/yql?q=select%20Bid%2CAsk%2CBidRealtime%2CAskRealtime%2CName%2CSymbol%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22USDRUB%3DX%2CEURRUB%3DX%2CBZQ15.NYM%2CEURUAH%3DX%2CUSDUAH%3DX%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
 
@@ -27,6 +28,9 @@ let tugriks: [TugrikSymbol: Tugrik] = [
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var ukrainianFlagButton: UIButton!
+    @IBOutlet weak var russianFlagButton: UIButton!
+    
     @IBOutlet weak var tugriksPerDollarLabel: UILabel!
     @IBOutlet weak var tugriksPerEuroLabel: UILabel!
     @IBOutlet weak var dollarsPerBarrelLabel: UILabel!
@@ -53,6 +57,8 @@ class MainViewController: UIViewController {
     }
     let dollarsPerBarrelComment: String! = "долларов за баррель"
     
+    var audioPlayer: AVAudioPlayer!
+    
     
     // MARK: - Overridden methods
     
@@ -60,10 +66,18 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
+        let bgmusic = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("bgmusic", ofType: "mp3")!)
+
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
         
+        var error: NSError?
+        audioPlayer = AVAudioPlayer(contentsOfURL: bgmusic, error: &error)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+
+        var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
         showDummyResults()
-        fetchQuotes()
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,8 @@
 		11CC61D61A5A82C800FF7079 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61D51A5A82C800FF7079 /* MainViewController.swift */; };
 		11CC61D81A5ACA1800FF7079 /* Attribution in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61D71A5ACA1800FF7079 /* Attribution */; };
 		11CC61DB1A5AE34100FF7079 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */; };
+		11DCB5D51A5C079600A6A3AE /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11DCB5D41A5C079600A6A3AE /* bgmusic.mp3 */; };
+		11ED1CA11A5BF56900138859 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11ED1CA01A5BF56900138859 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		11CC61D51A5A82C800FF7079 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11CC61D71A5ACA1800FF7079 /* Attribution */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Attribution; sourceTree = "<group>"; };
 		11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		11DCB5D41A5C079600A6A3AE /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
+		11ED1CA01A5BF56900138859 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11ED1CA11A5BF56900138859 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +121,8 @@
 		11CC61C81A5A7E0500FF7079 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				11CC61D71A5ACA1800FF7079 /* Attribution */,
+				11DCB5D61A5C0A3300A6A3AE /* Frameworks */,
 				11CC61CD1A5A7FBA00FF7079 /* Images */,
 				11CC61CE1A5A7FC100FF7079 /* NIBs */,
 				11CC61CF1A5A7FF300FF7079 /* Sounds */,
@@ -144,9 +151,8 @@
 		11CC61CD1A5A7FBA00FF7079 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */,
 				11CC61C61A5A7DF000FF7079 /* Default-568h@2x.png */,
-				11CC61D71A5ACA1800FF7079 /* Attribution */,
+				11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 		11CC61CF1A5A7FF300FF7079 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				11DCB5D41A5C079600A6A3AE /* bgmusic.mp3 */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -180,6 +187,14 @@
 				11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		11DCB5D61A5C0A3300A6A3AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11ED1CA01A5BF56900138859 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +279,7 @@
 			files = (
 				11CC61D81A5ACA1800FF7079 /* Attribution in Resources */,
 				11CC61AC1A5A7CAA00FF7079 /* Main.storyboard in Resources */,
+				11DCB5D51A5C079600A6A3AE /* bgmusic.mp3 in Resources */,
 				11CC61C71A5A7DF000FF7079 /* Default-568h@2x.png in Resources */,
 				11CC61AE1A5A7CAA00FF7079 /* Images.xcassets in Resources */,
 			);
@@ -471,6 +487,7 @@
 				11CC61C21A5A7CAB00FF7079 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11CC61C31A5A7CAB00FF7079 /* Build configuration list for PBXNativeTarget "ZenExchangeTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +496,7 @@
 				11CC61C51A5A7CAB00FF7079 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
