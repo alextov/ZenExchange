@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
         
         showDummyResults()
         fetchQuotes()
@@ -96,13 +96,17 @@ class MainViewController: UIViewController {
         let request = NSURLRequest(URL: url)
         let queue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            let result: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-            let parsedResults = self.parseJSON(result)
-            let symbol = tugriks[self.currentTugrik]!.symbol
-            let dollarQuote = parsedResults.valueForKey("USD\(symbol)=X") as? Double ?? 0.0
-            let euroQuote = parsedResults.valueForKey("EUR\(symbol)=X") as? Double ?? 0.0
-            let oilQuote = parsedResults.valueForKey("BZQ15.NYM") as? Double ?? 0.0
-            self.showResults(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
+            if data != nil {
+                let result: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                let parsedResults = self.parseJSON(result)
+                let symbol = tugriks[self.currentTugrik]!.symbol
+                let dollarQuote = parsedResults.valueForKey("USD\(symbol)=X") as? Double ?? 0.0
+                let euroQuote = parsedResults.valueForKey("EUR\(symbol)=X") as? Double ?? 0.0
+                let oilQuote = parsedResults.valueForKey("BZQ15.NYM") as? Double ?? 0.0
+                self.showResults(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
+            } else {
+                self.showDummyResults()
+            }
         }
     }
     
@@ -123,7 +127,7 @@ class MainViewController: UIViewController {
     
     func showResults(#dollarQuote: Double, euroQuote: Double, oilQuote: Double) {
         dispatch_async(dispatch_get_main_queue()) {
-            println("\(dollarQuote)\t\(euroQuote)\t\(oilQuote)")
+//            println("\(dollarQuote)\t\(euroQuote)\t\(oilQuote)")
             self.tugriksPerDollarLabel.text = String(format: "%.2f", dollarQuote)
             self.tugriksPerEuroLabel.text = String(format: "%.2f", euroQuote)
             self.dollarsPerBarrelLabel.text = String(format: "%.2f", oilQuote)
@@ -134,15 +138,17 @@ class MainViewController: UIViewController {
     }
     
     func showDummyResults() {
-        var dummyText: NSMutableArray = ["я чото п?", "guru meditation", "при пожаре звони 101", "не паникуй!", "в килобайте 1000 байт", "буду через 15 минут", "кто здесь?", "ж-ж-ж-ж-ж", "привет, как дела?", "my other car is a cdr", "скорее... эх, тоска"]
-        for label in [tugriksPerDollarLabel, tugriksPerEuroLabel, dollarsPerBarrelLabel] {
-            label.text = ""
-        }
-        for label in [tugriksPerDollarCommentLabel, tugriksPerEuroCommentLabel, dollarsPerBarrelCommentLabel] {
-            let count = UInt32(dummyText.count)
-            let index = Int(arc4random_uniform(count))
-            label.text = dummyText[index] as? String ?? ""
-            dummyText.removeObjectAtIndex(index)
+        dispatch_async(dispatch_get_main_queue()) {
+            var dummyText: NSMutableArray = ["я чото п?", "guru meditation", "при пожаре звони 101", "не паникуй!", "в килобайте 1000 байт", "буду через 15 минут", "кто здесь?", "ж-ж-ж-ж-ж", "привет, как дела?", "my other car is a cdr", "скорее... эх, тоска"]
+            for label in [self.tugriksPerDollarLabel, self.tugriksPerEuroLabel, self.dollarsPerBarrelLabel] {
+                label.text = ""
+            }
+            for label in [self.tugriksPerDollarCommentLabel, self.tugriksPerEuroCommentLabel, self.dollarsPerBarrelCommentLabel] {
+                let count = UInt32(dummyText.count)
+                let index = Int(arc4random_uniform(count))
+                label.text = dummyText[index] as? String ?? ""
+                dummyText.removeObjectAtIndex(index)
+            }
         }
     }
 

@@ -22,9 +22,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="our-ao-ynK" userLabel="Background Image">
                                 <rect key="frame" x="449" y="296" width="156" height="246"/>
                                 <color key="backgroundColor" red="0.1137254902" green="1" blue="0.16862745100000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="416" y="350" width="456" height="316"/>
-                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKl-ha-fqe" userLabel="UAH per USD wrapper">
                                 <rect key="frame" x="16" y="119" width="200" height="120"/>
@@ -44,10 +41,10 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="143" width="400" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="400" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -68,10 +65,10 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="114" y="358" width="173" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="114" y="274" width="173" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="314" y="274" width="173" height="21"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -168,10 +165,10 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="143" width="400" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="400" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -192,10 +189,10 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="114" y="358" width="173" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="114" y="274" width="173" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="314" y="274" width="173" height="21"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -316,10 +313,10 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="143" width="400" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="400" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -340,10 +337,10 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="114" y="358" width="173" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="114" y="274" width="173" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="314" y="274" width="173" height="21"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
