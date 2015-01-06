@@ -112,31 +112,38 @@ class MainViewController: UIViewController {
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             if data != nil {
                 let result: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-                let parsedResults = self.parseJSON(result)
-                let symbol = tugriks[self.currentTugrik]!.symbol
-                let dollarQuote = parsedResults.valueForKey("USD\(symbol)=X") as? Double ?? 0.0
-                let euroQuote = parsedResults.valueForKey("EUR\(symbol)=X") as? Double ?? 0.0
-                let oilQuote = parsedResults.valueForKey("BZQ15.NYM") as? Double ?? 0.0
-                self.showResults(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
+                if let parsedResults = self.parseJSON(result) {
+                    let symbol = tugriks[self.currentTugrik]!.symbol
+                    let dollarQuote = parsedResults.valueForKey("USD\(symbol)=X") as? Double ?? 0.0
+                    let euroQuote = parsedResults.valueForKey("EUR\(symbol)=X") as? Double ?? 0.0
+                    let oilQuote = parsedResults.valueForKey("BZQ15.NYM") as? Double ?? 0.0
+                    self.showResults(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
+                } else {
+                    self.showDummyResults()
+                }
             } else {
                 self.showDummyResults()
             }
         }
     }
     
-    func parseJSON(jsonObject: NSDictionary) -> NSDictionary {
+    func parseJSON(jsonObject: NSDictionary) -> NSDictionary? {
         var result = NSMutableDictionary()
         let json = JSON(jsonObject)
-        let quotes = json["query"]["results"]["quote"]
-        for (index: String, quote: JSON) in quotes {
-            let symbol = quote["Symbol"]
-            var ask = quote["Ask"]
-            if let askRealtime = quote["AskRealtime"].string {
-                ask = quote["AskRealtime"]
+        if json["error"] == nil {
+            let quotes = json["query"]["results"]["quote"]
+            for (index: String, quote: JSON) in quotes {
+                let symbol = quote["Symbol"]
+                var ask = quote["Ask"]
+                if let askRealtime = quote["AskRealtime"].string {
+                    ask = quote["AskRealtime"]
+                }
+                result[symbol.string!] = (ask.string! as NSString).doubleValue
             }
-            result[symbol.string!] = (ask.string! as NSString).doubleValue
+            return result
+        } else {
+            return nil
         }
-        return result
     }
     
     func showResults(#dollarQuote: Double, euroQuote: Double, oilQuote: Double) {
