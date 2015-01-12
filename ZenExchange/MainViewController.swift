@@ -306,6 +306,7 @@ class MainViewController: UIViewController {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), callback)
     }
     
+    /// Initialize falling images system.
     func initFlyingTugriks() {
         animator = UIDynamicAnimator(referenceView: self.view)
         gravity = UIGravityBehavior()
@@ -318,9 +319,15 @@ class MainViewController: UIViewController {
         }
     }
     
+    /// Add one flying image in random place on X axis of the screen.
     func addFlyingTugrik() {
         let minX = self.view.frame.origin.x - FlyingTugrik.Static.size
-        let maxX = self.view.frame.width
+        // Here instead of simply using width, we're checking for the largest
+        // dimension of the device. By using such approach we can make sure 
+        // that when user rotates their device they will see images all over
+        // their screen rather than just in a narrow column on the left 
+        // (when rotating from portrait to landscape).
+        let maxX = max(self.view.frame.height, self.view.frame.width)
         let y = -FlyingTugrik.Static.size
         
         let flyingTugrik = FlyingTugrik(minX: minX, maxX: maxX)
@@ -332,17 +339,25 @@ class MainViewController: UIViewController {
         self.flyingTugriks.addObject(flyingTugrik)
     }
     
+    /// Remove unneded images and adjust horizontal/vertical velocities of existing ones.
     func adjustFlyingTugriks() {
         var numberOfTugriksTotal = self.flyingTugriks.count
         
+        // Check if max number of images has been reached.
         if numberOfTugriksTotal < FlyingTugrik.Static.max {
+            // If not, add some random number of images (but not too many).
             let numberOfTugriksToAdd = randomNumberBetween(low: 1, high: (FlyingTugrik.Static.max - FlyingTugrik.Static.min) / 3)
             for _ in 1...numberOfTugriksToAdd {
                 addFlyingTugrik()
             }
         }
         
+        // Variable to store indexes of images that have hidden below bottom border
+        // of the screen.
         var tugriksToRemove = NSMutableIndexSet()
+        
+        // Check which images have already hidden and don't need to be stored
+        // anymore.
         for index in 0...numberOfTugriksTotal - 1 {
             let flyingTugrik = self.flyingTugriks[index] as FlyingTugrik
             if flyingTugrik.imageView.frame.origin.y > self.view.frame.height {
@@ -352,11 +367,13 @@ class MainViewController: UIViewController {
                 // TODO: adjust horizontal/vertical velocity
             }
         }
+        // After all iterations are done, remove already invisible images.
         self.flyingTugriks.removeObjectsAtIndexes(tugriksToRemove)
     }
 
 }
 
+/// Return random Int number between low and high.
 func randomNumberBetween(#low: Int, #high: Int) -> Int {
     let result = Int(arc4random_uniform(UInt32(high - low + 1))) + low
     return result
