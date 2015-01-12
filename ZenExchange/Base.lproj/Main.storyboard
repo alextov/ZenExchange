@@ -33,9 +33,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
+                                        <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                            <rect key="frame" x="4" y="12" width="192" height="77"/>
                                         </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="226" width="600" height="215"/>
@@ -49,9 +48,6 @@
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="2" width="400" height="96"/>
-                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
@@ -64,9 +60,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="29" y="89" width="142" height="21"/>
-                                        </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="214" y="441" width="173" height="21"/>
                                         </variation>
@@ -78,9 +71,6 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="314" y="274" width="173" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="98" width="400" height="21"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="314" y="391" width="173" height="21"/>
@@ -178,9 +168,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="39" y="89" width="122" height="21"/>
-                                        </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="214" y="441" width="173" height="21"/>
                                         </variation>
@@ -192,9 +179,6 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="314" y="274" width="173" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="98" width="400" height="21"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="314" y="391" width="173" height="21"/>
@@ -208,9 +192,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
+                                        <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                            <rect key="frame" x="5" y="12" width="192" height="77"/>
                                         </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="226" width="600" height="215"/>
@@ -223,9 +206,6 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="2" width="400" height="96"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
@@ -347,9 +327,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
+                                        <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                            <rect key="frame" x="4" y="12" width="192" height="77"/>
                                         </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="226" width="600" height="215"/>
@@ -363,9 +342,6 @@
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="59" width="800" height="215"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="2" width="400" height="96"/>
-                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="276" width="800" height="115"/>
                                         </variation>
@@ -378,9 +354,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="19" y="89" width="163" height="21"/>
-                                        </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="214" y="441" width="173" height="21"/>
                                         </variation>
@@ -392,9 +365,6 @@
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="314" y="274" width="173" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="98" width="400" height="21"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="314" y="391" width="173" height="21"/>
