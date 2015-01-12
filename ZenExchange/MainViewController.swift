@@ -34,15 +34,23 @@ class FlyingTugrik {
         static let max = 20
         static var minResistance = 0.1
         static var maxResistance = 0.5
+        static var minAngularVelocity = -0.3
+        static var maxAngularVelocity = 0.3
     }
     var imageView: UIImageView!
-    var resistance: CGFloat!
+    var itemBehavior: UIDynamicItemBehavior!
     
     init(minX: CGFloat, maxX: CGFloat, y: CGFloat) {
         let x = CGFloat(randomNumberBetween(low: Int(minX), high: Int(maxX)))
         imageView = UIImageView(frame: CGRectMake(x, y, Static.size, Static.size))
         imageView.image = UIImage(named: "banknote")
-        resistance = CGFloat(randomNumberBetween(low: Int(Static.minResistance * 100), high: Int(Static.maxResistance * 100))) / 100.0
+
+        let resistance = CGFloat(randomNumberBetween(low: Int(Static.minResistance * 100), high: Int(Static.maxResistance * 100))) / 100.0
+        let angularVelocity = CGFloat(randomNumberBetween(low: Int(Static.minAngularVelocity * 100), high: Int(Static.maxAngularVelocity * 100))) / 100.0
+        
+        itemBehavior = UIDynamicItemBehavior(items: [imageView])
+        itemBehavior.resistance = resistance
+        itemBehavior.addAngularVelocity(angularVelocity, forItem: imageView)
     }
 }
 
@@ -311,9 +319,7 @@ class MainViewController: UIViewController {
         self.view.insertSubview(flyingTugrik.imageView, aboveSubview: self.backgroundImageView)
         gravity.addItem(flyingTugrik.imageView)
         
-        let itemBehavior = UIDynamicItemBehavior(items: [flyingTugrik.imageView])
-        itemBehavior.resistance = flyingTugrik.resistance
-        animator.addBehavior(itemBehavior)
+        animator.addBehavior(flyingTugrik.itemBehavior)
         
         self.flyingTugriks.addObject(flyingTugrik)
     }
