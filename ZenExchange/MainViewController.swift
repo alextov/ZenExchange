@@ -28,11 +28,12 @@ let tugriks: [TugrikSymbol: Tugrik] = [
 
 class FlyingTugrik {
     struct Static {
+        static let gravity: CGFloat = 0.01
         static let size: CGFloat = 44.0
         static let min = 5
         static let max = 20
-        static var minResistance = 0.2
-        static var maxResistance = 0.8
+        static var minResistance = 0.1
+        static var maxResistance = 0.5
     }
     var imageView: UIImageView!
     var resistance: CGFloat!
@@ -281,28 +282,36 @@ class MainViewController: UIViewController {
     func initFlyingTugriks() {
         animator = UIDynamicAnimator(referenceView: self.view)
         gravity = UIGravityBehavior()
-        gravity.gravityDirection = CGVectorMake(0.0, 0.01)
+        gravity.gravityDirection = CGVectorMake(0.0, FlyingTugrik.Static.gravity)
         animator.addBehavior(gravity)
-        
-        let minX = self.view.frame.origin.x - FlyingTugrik.Static.size
-        let maxX = self.view.frame.width
-        let y = -FlyingTugrik.Static.size
+
         let initialTugriksNumber = randomNumberBetween(low: 1, high: FlyingTugrik.Static.min)
         for _ in 1...initialTugriksNumber {
-            let flyingTugrik = FlyingTugrik(minX: minX, maxX: maxX, y: y)
-            self.view.insertSubview(flyingTugrik.imageView, aboveSubview: self.backgroundImageView)
-            gravity.addItem(flyingTugrik.imageView)
-            
-            let itemBehavior = UIDynamicItemBehavior(items: [flyingTugrik.imageView])
-            itemBehavior.resistance = flyingTugrik.resistance
-            animator.addBehavior(itemBehavior)
-            
-            self.flyingTugriks.addObject(flyingTugrik)
+            addFlyingTugrik()
         }
     }
     
-    func adjustFlyingTugriks() {
+    func addFlyingTugrik() {
+        let minX = self.view.frame.origin.x - FlyingTugrik.Static.size
+        let maxX = self.view.frame.width
+        let y = -FlyingTugrik.Static.size
         
+        let flyingTugrik = FlyingTugrik(minX: minX, maxX: maxX, y: y)
+        self.view.insertSubview(flyingTugrik.imageView, aboveSubview: self.backgroundImageView)
+        gravity.addItem(flyingTugrik.imageView)
+        
+        let itemBehavior = UIDynamicItemBehavior(items: [flyingTugrik.imageView])
+        itemBehavior.resistance = flyingTugrik.resistance
+        animator.addBehavior(itemBehavior)
+        
+        self.flyingTugriks.addObject(flyingTugrik)
+    }
+    
+    func adjustFlyingTugriks() {
+        let numberOfTugriksToAdd = randomNumberBetween(low: 1, high: (FlyingTugrik.Static.max - FlyingTugrik.Static.min) / 10)
+        for _ in 1...numberOfTugriksToAdd {
+            addFlyingTugrik()
+        }
     }
 
 }
