@@ -84,6 +84,8 @@ class MainViewController: UIViewController {
     }
     let dollarsPerBarrelComment: String! = "долларов за баррель"
     
+    var shouldFetchTugriksAgain: Bool = true
+    
     var audioPlayer: AVAudioPlayer!
     
     
@@ -159,6 +161,10 @@ class MainViewController: UIViewController {
     // MARK: - Private methods
     
     func fetchQuotes() {
+        if !shouldFetchTugriksAgain {
+            return
+        }
+        shouldFetchTugriksAgain = false
         let url = NSURL(string: YQL_QUERY)!
         let request = NSURLRequest(URL: url)
         let queue = NSOperationQueue()
@@ -177,6 +183,7 @@ class MainViewController: UIViewController {
             } else {
                 self.showDummyResults()
             }
+            self.shouldFetchTugriksAgain = true
         }
     }
     
