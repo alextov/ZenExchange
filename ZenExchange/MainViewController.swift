@@ -34,23 +34,31 @@ class FlyingTugrik {
         static let max = 20
         static var minResistance = 0.1
         static var maxResistance = 0.5
+        static var minLinearVelocity = -0.3
+        static var maxLinearVelocity = 0.3
         static var minAngularVelocity = -0.3
         static var maxAngularVelocity = 0.3
     }
     var imageView: UIImageView!
     var itemBehavior: UIDynamicItemBehavior!
+    var resistance: CGFloat!
+    var linearVelocity: CGFloat!
+    var angularVelocity: CGFloat!
     
-    init(minX: CGFloat, maxX: CGFloat, y: CGFloat) {
+    init(minX: CGFloat, maxX: CGFloat) {
         let x = CGFloat(randomNumberBetween(low: Int(minX), high: Int(maxX)))
+        let y = CGFloat(-randomNumberBetween(low: Int(Static.size), high: Int(Static.size * 5)))
         imageView = UIImageView(frame: CGRectMake(x, y, Static.size, Static.size))
         imageView.image = UIImage(named: "banknote")
 
-        let resistance = CGFloat(randomNumberBetween(low: Int(Static.minResistance * 100), high: Int(Static.maxResistance * 100))) / 100.0
-        let angularVelocity = CGFloat(randomNumberBetween(low: Int(Static.minAngularVelocity * 100), high: Int(Static.maxAngularVelocity * 100))) / 100.0
+        resistance = CGFloat(randomNumberBetween(low: Int(Static.minResistance * 100), high: Int(Static.maxResistance * 100))) / 100.0
+        linearVelocity = CGFloat(randomNumberBetween(low: Int(Static.minLinearVelocity * 100), high: Int(Static.maxLinearVelocity * 100))) / 100.0
+        angularVelocity = CGFloat(randomNumberBetween(low: Int(Static.minAngularVelocity * 100), high: Int(Static.maxAngularVelocity * 100))) / 100.0
         
         itemBehavior = UIDynamicItemBehavior(items: [imageView])
         itemBehavior.resistance = resistance
         itemBehavior.addAngularVelocity(angularVelocity, forItem: imageView)
+//        itemBehavior.addLinearVelocity(linearVelocity, forItem: imageView) // FIXME: what the acual fuck
     }
 }
 
@@ -315,7 +323,7 @@ class MainViewController: UIViewController {
         let maxX = self.view.frame.width
         let y = -FlyingTugrik.Static.size
         
-        let flyingTugrik = FlyingTugrik(minX: minX, maxX: maxX, y: y)
+        let flyingTugrik = FlyingTugrik(minX: minX, maxX: maxX)
         self.view.insertSubview(flyingTugrik.imageView, aboveSubview: self.backgroundImageView)
         gravity.addItem(flyingTugrik.imageView)
         
@@ -325,10 +333,26 @@ class MainViewController: UIViewController {
     }
     
     func adjustFlyingTugriks() {
-        let numberOfTugriksToAdd = randomNumberBetween(low: 1, high: (FlyingTugrik.Static.max - FlyingTugrik.Static.min) / 10)
-        for _ in 1...numberOfTugriksToAdd {
-            addFlyingTugrik()
+        var numberOfTugriksTotal = self.flyingTugriks.count
+        
+        if numberOfTugriksTotal < FlyingTugrik.Static.max {
+            let numberOfTugriksToAdd = randomNumberBetween(low: 1, high: (FlyingTugrik.Static.max - FlyingTugrik.Static.min) / 3)
+            for _ in 1...numberOfTugriksToAdd {
+                addFlyingTugrik()
+            }
         }
+        
+        var tugriksToRemove = NSMutableIndexSet()
+        for index in 0...numberOfTugriksTotal - 1 {
+            let flyingTugrik = self.flyingTugriks[index] as FlyingTugrik
+            if flyingTugrik.imageView.frame.origin.y > self.view.frame.height {
+                flyingTugrik.imageView.removeFromSuperview()
+                tugriksToRemove.addIndex(index)
+            } else {
+                // TODO: adjust horizontal/vertical velocity
+            }
+        }
+        self.flyingTugriks.removeObjectsAtIndexes(tugriksToRemove)
     }
 
 }
