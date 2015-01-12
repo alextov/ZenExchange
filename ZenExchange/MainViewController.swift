@@ -70,7 +70,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Set random background image.
-        setRandomBackground()
+        setRandomBackground(animated: false)
         
         // Play music.
         let bgmusic = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("bgmusic", ofType: "mp3")!)
@@ -203,7 +203,7 @@ class MainViewController: UIViewController {
         label.text = text
     }
     
-    func setRandomBackground() {
+    func setRandomBackground(animated: Bool = true) {
         // FIXME: rework this pile of filth
         let backgroundCount = 3
         var availableBackgroundNumbers = [Int]()
@@ -218,29 +218,32 @@ class MainViewController: UIViewController {
         let backgroundName = "background" + String(backgroundNumber)
         let backgroundImage = UIImage(named: backgroundName)
         
-        let backgroundImageView = UIImageView(image: self.backgroundImageView.image)
-        backgroundImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        self.view.insertSubview(backgroundImageView, aboveSubview: self.backgroundImageView)
+        if animated {
+            let backgroundImageView = UIImageView(image: self.backgroundImageView.image)
+            backgroundImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
+            self.view.insertSubview(backgroundImageView, aboveSubview: self.backgroundImageView)
+            
+            let viewsDictionary = ["backgroundImageView": backgroundImageView]
+            let constraintH = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[backgroundImageView]-0-|", options: nil, metrics: nil, views: viewsDictionary)
+            let constraintV = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[backgroundImageView]-0-|", options: nil, metrics: nil, views: viewsDictionary)
+            self.view.addConstraints(constraintH)
+            self.view.addConstraints(constraintV)
+            
+            let animationDuration = 0.5
+            UIImageView.animateWithDuration(animationDuration,
+                animations: {
+                    () -> Void in
+                    backgroundImageView.alpha = 0.0
+                },
+                completion: {
+                    (finished: Bool) -> Void in
+                    backgroundImageView.removeFromSuperview()
+                }
+            )
+        }
+        
         self.backgroundImageView.image = backgroundImage
-        
-        let viewsDictionary = ["backgroundImageView": backgroundImageView]
-        let constraintH = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[backgroundImageView]-0-|", options: nil, metrics: nil, views: viewsDictionary)
-        let constraintV = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[backgroundImageView]-0-|", options: nil, metrics: nil, views: viewsDictionary)
-        self.view.addConstraints(constraintH)
-        self.view.addConstraints(constraintV)
-        
-        let animationDuration = 0.5
-        UIImageView.animateWithDuration(animationDuration,
-            animations: {
-                () -> Void in
-                backgroundImageView.alpha = 0.0
-            },
-            completion: {
-                (finished: Bool) -> Void in
-                backgroundImageView.removeFromSuperview()
-            }
-        )
     }
     
     func executeWithDelay(delay: Double, callback: () -> ()) {
