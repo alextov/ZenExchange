@@ -133,6 +133,8 @@ class MainViewController: UIViewController {
             currentTugrik = .UAH
             fetchQuotes()
             setRandomBackground()
+            ukrainianFlagButton.setBackgroundImage(UIImage(named: "UA"), forState: .Normal)
+            russianFlagButton.setBackgroundImage(UIImage(named: "RU_disabled"), forState: .Normal)
         }
     }
 
@@ -141,6 +143,8 @@ class MainViewController: UIViewController {
             currentTugrik = .RUB
             fetchQuotes()
             setRandomBackground()
+            ukrainianFlagButton.setBackgroundImage(UIImage(named: "UA_disabled"), forState: .Normal)
+            russianFlagButton.setBackgroundImage(UIImage(named: "RU"), forState: .Normal)
         }
     }
     
