@@ -26,6 +26,25 @@ let tugriks: [TugrikSymbol: Tugrik] = [
     .RUB: Tugrik(symbol: TugrikSymbol.RUB.rawValue, name: "рублей")
 ]
 
+class FlyingTugrik {
+    struct Static {
+        static let size: CGFloat = 44.0
+        static let min = 5
+        static let max = 20
+        static var minResistance = 0.2
+        static var maxResistance = 0.8
+    }
+    var imageView: UIImageView!
+    var resistance: CGFloat!
+    
+    init(minX: CGFloat, maxX: CGFloat, y: CGFloat) {
+        let x = CGFloat(randomNumberBetween(low: Int(minX), high: Int(maxX)))
+        imageView = UIImageView(frame: CGRectMake(x, y, Static.size, Static.size))
+        imageView.image = UIImage(named: "banknote")
+        resistance = CGFloat(randomNumberBetween(low: Int(Static.minResistance * 100), high: Int(Static.maxResistance * 100))) / 100.0
+    }
+}
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var ukrainianFlagButton: UIButton!
@@ -40,6 +59,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     var currentBackgroundImageIndex: Int! = 0
+    
+    var animator: UIDynamicAnimator!
+    var gravity: UIGravityBehavior!
+    var collision: UICollisionBehavior!
+    var flyingTugriks = NSMutableArray()
     
     var currentTugrik: TugrikSymbol! = .UAH
     var tugrikName: String! {
@@ -85,10 +109,14 @@ class MainViewController: UIViewController {
 //        audioPlayer.play()
         
         // Load quote values.
-        var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
+        var flyingTugriksTimer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "adjustFlyingTugriks", userInfo: nil, repeats: true)
         
         // While these are loading, show some dummy messages to entertain user.
         showDummyResults()
+        fetchQuotes()
+        
+        initFlyingTugriks()
     }
 
     override func didReceiveMemoryWarning() {
@@ -249,5 +277,37 @@ class MainViewController: UIViewController {
     func executeWithDelay(delay: Double, callback: () -> ()) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), callback)
     }
+    
+    func initFlyingTugriks() {
+        animator = UIDynamicAnimator(referenceView: self.view)
+        gravity = UIGravityBehavior()
+        gravity.gravityDirection = CGVectorMake(0.0, 0.01)
+        animator.addBehavior(gravity)
+        
+        let minX = self.view.frame.origin.x - FlyingTugrik.Static.size
+        let maxX = self.view.frame.width
+        let y = -FlyingTugrik.Static.size
+        let initialTugriksNumber = randomNumberBetween(low: 1, high: FlyingTugrik.Static.min)
+        for _ in 1...initialTugriksNumber {
+            let flyingTugrik = FlyingTugrik(minX: minX, maxX: maxX, y: y)
+            self.view.insertSubview(flyingTugrik.imageView, aboveSubview: self.backgroundImageView)
+            gravity.addItem(flyingTugrik.imageView)
+            
+            let itemBehavior = UIDynamicItemBehavior(items: [flyingTugrik.imageView])
+            itemBehavior.resistance = flyingTugrik.resistance
+            animator.addBehavior(itemBehavior)
+            
+            self.flyingTugriks.addObject(flyingTugrik)
+        }
+    }
+    
+    func adjustFlyingTugriks() {
+        
+    }
 
+}
+
+func randomNumberBetween(#low: Int, #high: Int) -> Int {
+    let result = Int(arc4random_uniform(UInt32(high - low + 1))) + low
+    return result
 }
