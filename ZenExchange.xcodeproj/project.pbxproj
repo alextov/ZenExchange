@@ -87,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				11CC61CB1A5A7F9200FF7079 /* Classes */,
+				11DCB5D61A5C0A3300A6A3AE /* Frameworks */,
 				11CC61C81A5A7E0500FF7079 /* Resources */,
 				11CC61A41A5A7CAA00FF7079 /* Supporting Files */,
 			);
@@ -122,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				11CC61D71A5ACA1800FF7079 /* Attribution */,
-				11DCB5D61A5C0A3300A6A3AE /* Frameworks */,
 				11CC61CD1A5A7FBA00FF7079 /* Images */,
 				11CC61CE1A5A7FC100FF7079 /* NIBs */,
 				11CC61CF1A5A7FF300FF7079 /* Sounds */,
