@@ -266,6 +266,14 @@ class MainViewController: UIViewController {
         }
     }
     
+    func fetchFromCoreData() -> [NSManagedObject]? {
+        let context = CoreDataManager.sharedInstance.managedObjectContext!
+        let request = NSFetchRequest(entityName: "Record")
+        var error: NSError?
+        let results = context.executeFetchRequest(request, error: &error) as? [NSManagedObject]
+        return results
+    }
+    
     func parseJSON(jsonObject: NSDictionary) -> NSDictionary? {
         var result = NSMutableDictionary()
         let json = JSON(jsonObject)
