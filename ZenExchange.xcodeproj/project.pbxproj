@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1116C7001A6514FA00F250A6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116C6FF1A6514FA00F250A6 /* Reachability.m */; };
 		11CC61A71A5A7CAA00FF7079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */; };
 		11CC61AC1A5A7CAA00FF7079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61AA1A5A7CAA00FF7079 /* Main.storyboard */; };
 		11CC61AE1A5A7CAA00FF7079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */; };
@@ -30,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1116C6FB1A6514B100F250A6 /* ZenExchange-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZenExchange-Bridging-Header.h"; sourceTree = "<group>"; };
+		1116C6FE1A6514FA00F250A6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1116C6FF1A6514FA00F250A6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		11CC61A11A5A7CAA00FF7079 /* ZenExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC61A51A5A7CAA00FF7079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,9 @@
 		11CC61D91A5ADF1400FF7079 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1116C6FE1A6514FA00F250A6 /* Reachability.h */,
+				1116C6FF1A6514FA00F250A6 /* Reachability.m */,
+				1116C6FB1A6514B100F250A6 /* ZenExchange-Bridging-Header.h */,
 				11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */,
 			);
 			name = Utils;
@@ -301,6 +308,7 @@
 			files = (
 				11CC61DB1A5AE34100FF7079 /* SwiftyJSON.swift in Sources */,
 				11CC61A71A5A7CAA00FF7079 /* AppDelegate.swift in Sources */,
+				1116C7001A6514FA00F250A6 /* Reachability.m in Sources */,
 				11CC61D61A5A82C800FF7079 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,9 +426,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZenExchange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZenExchange/ZenExchange-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,9 +439,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZenExchange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZenExchange/ZenExchange-Bridging-Header.h";
 			};
 			name = Release;
 		};
