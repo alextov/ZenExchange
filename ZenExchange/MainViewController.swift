@@ -74,6 +74,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tugriksPerEuroCommentLabel: UILabel!
     @IBOutlet weak var dollarsPerBarrelCommentLabel: UILabel!
     
+    @IBOutlet weak var obsoleteDataLabel: UILabel!
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     var currentBackgroundImageIndex: Int! = 0
     
@@ -86,6 +88,11 @@ class MainViewController: UIViewController {
     var tugrikName: String! {
         get {
             return tugriks[self.currentTugrik]!.name
+        }
+    }
+    var tugrikSymbol: String! {
+        get {
+            return tugriks[self.currentTugrik]!.symbol
         }
     }
     var tugriksPerDollarComment: String! {
@@ -143,7 +150,7 @@ class MainViewController: UIViewController {
         var flyingTugriksTimer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "adjustFlyingTugriks", userInfo: nil, repeats: true)
         
         // While these are loading, show some dummy messages to entertain user.
-        loadQuotes()
+        loadQuotes(tugriks[self.currentTugrik]!.symbol)
         fetchQuotes()
         
         initFlyingTugriks()
@@ -189,10 +196,11 @@ class MainViewController: UIViewController {
     
     func fetchQuotes() {
         if !reachability.isReachable() {
+            self.loadQuotes(tugrikSymbol)
             return
         }
         if !shouldFetchTugriksAgain {
-            return
+//            return
         }
         shouldFetchTugriksAgain = false
         let url = NSURL(string: YQL_QUERY)!
@@ -200,40 +208,42 @@ class MainViewController: UIViewController {
         let queue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
 //            println(data)
+            let symbol = tugriks[self.currentTugrik]!.symbol
             if data != nil {
                 let result: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                 if let parsedResults = self.parseJSON(result) {
-                    let symbol = tugriks[self.currentTugrik]!.symbol
                     let dollarQuote = parsedResults.valueForKey("USD\(symbol)=X") as? Double ?? 0.0
                     let euroQuote = parsedResults.valueForKey("EUR\(symbol)=X") as? Double ?? 0.0
                     let oilQuote = parsedResults.valueForKey("BZQ15.NYM") as? Double ?? 0.0
                     self.showResults(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
-                    self.saveQuotes(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
+                    self.saveQuotes(symbol, dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
                 } else {
-                    self.loadQuotes()
+                    self.loadQuotes(symbol)
                 }
             } else {
-                self.loadQuotes()
+                self.loadQuotes(symbol)
             }
             self.shouldFetchTugriksAgain = true
         }
     }
     
-    func saveQuotes(dollarQuote dollar: Double, euroQuote euro: Double, oilQuote oil: Double) {
-        defaults.setDouble(dollar, forKey: "dollarQuote")
-        defaults.setDouble(euro, forKey: "euroQuote")
-        defaults.setDouble(oil, forKey: "oilQuote")
+    func saveQuotes(symbol: String, dollarQuote dollar: Double, euroQuote euro: Double, oilQuote oil: Double) {
+        defaults.setDouble(dollar, forKey: "\(symbol)dollarQuote")
+        defaults.setDouble(euro, forKey: "\(symbol)euroQuote")
+        defaults.setDouble(oil, forKey: "\(symbol)oilQuote")
         defaults.synchronize()
+        self.showObsoletionLabel(shouldHide: true)
     }
     
-    func loadQuotes() {
-        let dollarQuote = defaults.objectForKey("dollarQuote") as? Double
-        let euroQuote = defaults.objectForKey("euroQuote") as? Double
-        let oilQuote = defaults.objectForKey("oilQuote") as? Double
+    func loadQuotes(symbol: String) {
+        let dollarQuote = defaults.objectForKey("\(symbol)dollarQuote") as? Double
+        let euroQuote = defaults.objectForKey("\(symbol)euroQuote") as? Double
+        let oilQuote = defaults.objectForKey("\(symbol)oilQuote") as? Double
         if dollarQuote == nil || euroQuote == nil || oilQuote == nil {
             self.showDummyResults()
         } else {
             self.showResults(dollarQuote: dollarQuote!, euroQuote: euroQuote!, oilQuote: oilQuote!)
+            self.showObsoletionLabel()
         }
     }
     
@@ -280,6 +290,21 @@ class MainViewController: UIViewController {
                 let text = dummyText[index] as? String ?? ""
                 self.setTextAnimated(label, text: text)
                 dummyText.removeObjectAtIndex(index)
+            }
+        }
+    }
+    
+    func showObsoletionLabel(shouldHide: Bool = false) {
+        dispatch_async(dispatch_get_main_queue()) {
+            if shouldHide {
+                self.obsoleteDataLabel.hidden = true
+            } else {
+                var dummyText: [String] = ["нет интернета, милорд", "это было давно и неправда", "давным-давно в далекой-далекой...", "ну или нет"]
+                let count = UInt32(dummyText.count)
+                let index = Int(arc4random_uniform(count))
+                let text = dummyText[index]
+                self.setTextAnimated(self.obsoleteDataLabel, text: text)
+                self.obsoleteDataLabel.hidden = false
             }
         }
     }
