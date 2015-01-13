@@ -517,7 +517,7 @@
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="GJM-tR-Vo4"/>
                                 </connections>
                             </view>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="наш интернет пожрал долгоносик" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-FW-vXa" userLabel="Obsolete data notification">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="наш интернет пожрал долгоносик" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-FW-vXa" userLabel="Obsolete data notification">
                                 <rect key="frame" x="89" y="322" width="368" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -618,10 +618,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="3Fh-OS-dCg"/>
-                                <exclude reference="6TU-Jn-kws"/>
-                                <exclude reference="Ism-hj-SWW"/>
-                                <exclude reference="XvT-Ib-BoV"/>
                                 <exclude reference="0k3-Dv-sKf"/>
                                 <exclude reference="2zu-fh-CP4"/>
                                 <exclude reference="I55-O9-l0E"/>
@@ -669,6 +665,10 @@
                                 <exclude reference="ffJ-jF-9Cd"/>
                                 <exclude reference="yLh-ow-vV8"/>
                                 <exclude reference="zSd-nu-rHA"/>
+                                <exclude reference="3Fh-OS-dCg"/>
+                                <exclude reference="6TU-Jn-kws"/>
+                                <exclude reference="Ism-hj-SWW"/>
+                                <exclude reference="XvT-Ib-BoV"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -692,13 +692,6 @@
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="constraints">
-                                <include reference="3Fh-OS-dCg"/>
-                                <include reference="6TU-Jn-kws"/>
-                                <exclude reference="EtA-n4-aFN"/>
-                                <include reference="Ism-hj-SWW"/>
-                                <exclude reference="Rvj-zI-7kL"/>
-                                <include reference="XvT-Ib-BoV"/>
-                                <exclude reference="o3i-WZ-Qi7"/>
                                 <include reference="lNa-Jz-HIJ"/>
                                 <include reference="1fj-GE-bRD"/>
                                 <include reference="1lG-xH-Vvn"/>
@@ -712,9 +705,16 @@
                                 <include reference="AJa-0c-eFG"/>
                                 <include reference="CDy-Zi-x0f"/>
                                 <include reference="hKe-MV-Dtc"/>
-                                <exclude reference="Tyo-fA-6Mc"/>
                                 <include reference="3Au-jb-Dl2"/>
                                 <include reference="Ztx-mo-7O3"/>
+                                <include reference="3Fh-OS-dCg"/>
+                                <include reference="6TU-Jn-kws"/>
+                                <exclude reference="EtA-n4-aFN"/>
+                                <include reference="Ism-hj-SWW"/>
+                                <exclude reference="Rvj-zI-7kL"/>
+                                <include reference="XvT-Ib-BoV"/>
+                                <exclude reference="o3i-WZ-Qi7"/>
+                                <exclude reference="Tyo-fA-6Mc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -747,6 +747,7 @@
                         <outlet property="backgroundImageView" destination="our-ao-ynK" id="YG3-ho-eLi"/>
                         <outlet property="dollarsPerBarrelCommentLabel" destination="BNi-ne-rV2" id="YMB-yK-tq8"/>
                         <outlet property="dollarsPerBarrelLabel" destination="Uay-w0-B4w" id="XUb-HB-tfK"/>
+                        <outlet property="obsoleteDataLabel" destination="x2j-FW-vXa" id="ocY-j6-JTZ"/>
                         <outlet property="russianFlagButton" destination="2L2-w9-LLe" id="2o5-Ms-DdG"/>
                         <outlet property="tugriksPerDollarCommentLabel" destination="95K-Jp-lCy" id="qz2-n2-9nF"/>
                         <outlet property="tugriksPerDollarLabel" destination="XP4-oq-iX2" id="4JM-df-re7"/>
