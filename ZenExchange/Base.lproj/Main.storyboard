@@ -776,43 +776,74 @@
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="omr-0r-oRd">
                     <connections>
-                        <segue destination="Q6J-00-IvD" kind="presentation" modalTransitionStyle="flipHorizontal" id="thf-VO-MEH"/>
+                        <segue destination="8y4-Mk-L4U" kind="presentation" modalTransitionStyle="flipHorizontal" id="aEb-Nh-EXm"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1504" y="318"/>
         </scene>
-        <!--Log View Controller-->
-        <scene sceneID="p7F-zb-aH4">
+        <!--Navigation Controller-->
+        <scene sceneID="V18-nh-hhc">
             <objects>
-                <tableViewController id="Q6J-00-IvD" userLabel="Log View Controller" customClass="LogTableViewController" customModule="ZenExchange" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Egq-TE-vtU">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8y4-Mk-L4U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNh-CI-bty">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="El6-iT-KFS" kind="relationship" relationship="rootViewController" id="FAL-jl-FX9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pN4-Ec-btT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2260" y="318"/>
+        </scene>
+        <!--It went like this-->
+        <scene sceneID="Xfq-gw-vVz">
+            <objects>
+                <viewController id="El6-iT-KFS" customClass="LogTableViewController" customModule="ZenExchange" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8UU-7v-Orx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogTableViewCell" id="r6V-SI-Nve" customClass="LogTableViewCell" customModule="ZenExchange" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogTableViewCellReuseIdentifier" id="NBg-a3-8qT" customClass="LogTableViewCell" customModule="ZenExchange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r6V-SI-Nve" id="vBb-Hf-6B1">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NBg-a3-8qT" id="pGn-cj-Qzr">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="Szm-bm-R0h" appends="YES" id="H2c-nJ-I0c"/>
+                                    </connections>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Q6J-00-IvD" id="aNx-Ow-9gB"/>
-                            <outlet property="delegate" destination="Q6J-00-IvD" id="Nlj-1i-7jD"/>
-                            <outletCollection property="gestureRecognizers" destination="n2L-oc-8c4" appends="YES" id="RHl-BT-1EM"/>
+                            <outletCollection property="gestureRecognizers" destination="Szm-bm-R0h" appends="YES" id="k81-YI-7mb"/>
                         </connections>
                     </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XQi-7S-eQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="n2L-oc-8c4">
+                    <navigationItem key="navigationItem" title="It went like this" id="qY2-JC-1Gj">
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="yqt-Ad-gwh">
+                            <connections>
+                                <action selector="swipeWasDetected:" destination="El6-iT-KFS" id="3eN-RZ-QJI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Очистить" id="Yyu-A1-vt6"/>
+                    </navigationItem>
                     <connections>
-                        <action selector="swipeWasDetected:" destination="Q6J-00-IvD" id="8EK-iS-iAQ"/>
+                        <outlet property="tableView" destination="8UU-7v-Orx" id="bP2-Tx-6RT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qIK-1d-izg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Szm-bm-R0h">
+                    <connections>
+                        <action selector="swipeWasDetected:" destination="El6-iT-KFS" id="8lN-z2-YRd"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2210" y="318"/>
+            <point key="canvasLocation" x="3003" y="318"/>
         </scene>
     </scenes>
     <resources>

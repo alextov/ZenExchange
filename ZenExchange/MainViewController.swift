@@ -214,9 +214,28 @@ class MainViewController: UIViewController {
             if data != nil {
                 let result: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                 if let parsedResults = self.parseJSON(result) {
-                    let dollarQuote = parsedResults.valueForKey("USD\(symbol)=X") as? Double ?? 0.0
-                    let euroQuote = parsedResults.valueForKey("EUR\(symbol)=X") as? Double ?? 0.0
+                    let quoteUsdUah = parsedResults.valueForKey("USDUAH=X") as? Double ?? 0.0
+                    let quoteEurUah = parsedResults.valueForKey("EURUAH=X") as? Double ?? 0.0
+                    let quoteUsdRub = parsedResults.valueForKey("USDRUB=X") as? Double ?? 0.0
+                    let quoteEurRub = parsedResults.valueForKey("EURRUB=X") as? Double ?? 0.0
                     let oilQuote = parsedResults.valueForKey("BZQ15.NYM") as? Double ?? 0.0
+                    self.saveToCoreData(quoteUsdUah: quoteUsdUah, quoteEurUah: quoteEurUah, quoteUsdRub: quoteUsdRub, quoteEurRub: quoteEurRub, quoteOil: oilQuote)
+                    
+                    var dollarQuote: Double
+                    var euroQuote: Double
+                    
+                    let tugrik: TugrikSymbol = self.currentTugrik
+                    switch tugrik {
+                    case .UAH:
+                        dollarQuote = quoteUsdUah
+                        euroQuote = quoteEurUah
+                    case .RUB:
+                        dollarQuote = quoteUsdRub
+                        euroQuote = quoteEurRub
+                    default:
+                        break
+                    }
+                    
                     self.showResults(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
                     self.saveQuotes(symbol, dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
                 } else {
@@ -265,14 +284,6 @@ class MainViewController: UIViewController {
         if !context.save(&error) {
             println("Could not save \(error), \(error!.userInfo)")
         }
-    }
-    
-    func fetchFromCoreData() -> [NSManagedObject]? {
-        let context = CoreDataManager.sharedInstance.managedObjectContext!
-        let request = NSFetchRequest(entityName: "Record")
-        var error: NSError?
-        let results = context.executeFetchRequest(request, error: &error) as? [NSManagedObject]
-        return results
     }
     
     func parseJSON(jsonObject: NSDictionary) -> NSDictionary? {
