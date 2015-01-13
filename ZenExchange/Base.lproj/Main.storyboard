@@ -23,6 +23,7 @@
                                 <color key="backgroundColor" red="0.1137254902" green="1" blue="0.16862745100000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="v3g-q8-VYi"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="VFg-jR-HvE"/>
                                 </connections>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMi-q5-9Dz" userLabel="Spacer">
@@ -33,6 +34,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="JOs-F5-EB4"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="4Dn-j2-2cH"/>
                                 </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-w1-T4E" userLabel="Spacer">
@@ -43,6 +45,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="GZO-AK-lf1"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="tbM-xT-FRk"/>
                                 </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvx-lT-cTO" userLabel="Spacer">
@@ -53,6 +56,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="sCC-0S-z2c"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="yQB-eN-j90"/>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BJ-H6-rsQ" userLabel="Ukrainian flag">
@@ -70,6 +74,7 @@
                                 </state>
                                 <connections>
                                     <action selector="ukrainianFlagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EWA-82-XJJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="FsK-vK-frZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L2-w9-LLe" userLabel="Russian flag">
@@ -82,6 +87,7 @@
                                 </state>
                                 <connections>
                                     <action selector="russianFlagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGO-XC-OaT"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="qW4-sB-m27"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKl-ha-fqe" userLabel="UAH per USD wrapper">
@@ -221,6 +227,7 @@
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="APu-5f-nf4"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="54j-vu-EPG"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPP-FN-jVH" userLabel="(pivot) UAH per EUR wrapper">
@@ -383,6 +390,7 @@
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="mB8-9n-3iU"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="fmH-cr-bQX"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-DX-Ri8" userLabel="USD per barel wrapper">
@@ -515,6 +523,7 @@
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="GJM-tR-Vo4"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="bnc-Z5-IxR"/>
                                 </connections>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="наш интернет пожрал долгоносик" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-FW-vXa" userLabel="Obsolete data notification">
@@ -522,6 +531,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="w9t-x1-TKd"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -762,8 +774,45 @@
                         <action selector="backgroundTapped:" destination="BYZ-38-t0r" id="f6l-eP-YLH"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="omr-0r-oRd">
+                    <connections>
+                        <segue destination="Q6J-00-IvD" kind="presentation" modalTransitionStyle="flipHorizontal" id="thf-VO-MEH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1465.5" y="318.75"/>
+            <point key="canvasLocation" x="1504" y="318"/>
+        </scene>
+        <!--Log View Controller-->
+        <scene sceneID="p7F-zb-aH4">
+            <objects>
+                <tableViewController id="Q6J-00-IvD" userLabel="Log View Controller" customClass="LogTableViewController" customModule="ZenExchange" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Egq-TE-vtU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogTableViewCell" id="r6V-SI-Nve" customClass="LogTableViewCell" customModule="ZenExchange" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r6V-SI-Nve" id="vBb-Hf-6B1">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Q6J-00-IvD" id="aNx-Ow-9gB"/>
+                            <outlet property="delegate" destination="Q6J-00-IvD" id="Nlj-1i-7jD"/>
+                            <outletCollection property="gestureRecognizers" destination="n2L-oc-8c4" appends="YES" id="RHl-BT-1EM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XQi-7S-eQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="n2L-oc-8c4">
+                    <connections>
+                        <action selector="swipeWasDetected:" destination="Q6J-00-IvD" id="8EK-iS-iAQ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2210" y="318"/>
         </scene>
     </scenes>
     <resources>

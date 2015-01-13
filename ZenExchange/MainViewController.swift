@@ -193,6 +193,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    
     // MARK: - Private methods
     
     func fetchQuotes() {
