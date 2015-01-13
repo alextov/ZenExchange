@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1116C7001A6514FA00F250A6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116C6FF1A6514FA00F250A6 /* Reachability.m */; };
+		113FB68B1A65512900B502B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113FB68A1A65512900B502B5 /* CoreDataManager.swift */; };
+		113FB6C31A65539400B502B5 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 113FB6C11A65539400B502B5 /* CoreDataModel.xcdatamodeld */; };
 		11CC61A71A5A7CAA00FF7079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */; };
 		11CC61AC1A5A7CAA00FF7079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61AA1A5A7CAA00FF7079 /* Main.storyboard */; };
 		11CC61AE1A5A7CAA00FF7079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CC61AD1A5A7CAA00FF7079 /* Images.xcassets */; };
@@ -34,6 +36,8 @@
 		1116C6FB1A6514B100F250A6 /* ZenExchange-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZenExchange-Bridging-Header.h"; sourceTree = "<group>"; };
 		1116C6FE1A6514FA00F250A6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1116C6FF1A6514FA00F250A6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		113FB68A1A65512900B502B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		113FB6C21A65539400B502B5 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		11CC61A11A5A7CAA00FF7079 /* ZenExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC61A51A5A7CAA00FF7079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11CC61A61A5A7CAA00FF7079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113FB6BD1A65532500B502B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				113FB6C11A65539400B502B5 /* CoreDataModel.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		11CC61981A5A7CAA00FF7079 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 				11CC61D01A5A801700FF7079 /* AppDelegate */,
 				11CC61CC1A5A7F9C00FF7079 /* Controllers */,
 				11CC61D91A5ADF1400FF7079 /* Utils */,
+				113FB6BD1A65532500B502B5 /* Models */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -188,10 +201,11 @@
 		11CC61D91A5ADF1400FF7079 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				113FB68A1A65512900B502B5 /* CoreDataManager.swift */,
 				1116C6FE1A6514FA00F250A6 /* Reachability.h */,
 				1116C6FF1A6514FA00F250A6 /* Reachability.m */,
-				1116C6FB1A6514B100F250A6 /* ZenExchange-Bridging-Header.h */,
 				11CC61DA1A5AE34100FF7079 /* SwiftyJSON.swift */,
+				1116C6FB1A6514B100F250A6 /* ZenExchange-Bridging-Header.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -308,7 +322,9 @@
 			files = (
 				11CC61DB1A5AE34100FF7079 /* SwiftyJSON.swift in Sources */,
 				11CC61A71A5A7CAA00FF7079 /* AppDelegate.swift in Sources */,
+				113FB6C31A65539400B502B5 /* CoreDataModel.xcdatamodeld in Sources */,
 				1116C7001A6514FA00F250A6 /* Reachability.m in Sources */,
+				113FB68B1A65512900B502B5 /* CoreDataManager.swift in Sources */,
 				11CC61D61A5A82C800FF7079 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +528,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		113FB6C11A65539400B502B5 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				113FB6C21A65539400B502B5 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 113FB6C21A65539400B502B5 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 11CC61991A5A7CAA00FF7079 /* Project object */;
 }
