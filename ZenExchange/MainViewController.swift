@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 let YQL_QUERY: String = "https://query.yahooapis.com/v1/public/yql?q=select%20Bid%2CAsk%2CBidRealtime%2CAskRealtime%2CName%2CSymbol%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22USDRUB%3DX%2CEURRUB%3DX%2CBZQ15.NYM%2CEURUAH%3DX%2CUSDUAH%3DX%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
 
@@ -244,6 +245,24 @@ class MainViewController: UIViewController {
         } else {
             self.showResults(dollarQuote: dollarQuote!, euroQuote: euroQuote!, oilQuote: oilQuote!)
             self.showObsoletionLabel()
+        }
+    }
+    
+    func saveToCoreData(#quoteUsdUah: Double, quoteEurUah: Double, quoteUsdRub: Double, quoteEurRub: Double, quoteOil: Double) {
+        let context = CoreDataManager.sharedInstance.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Record", inManagedObjectContext: context)
+        let record = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
+        record.setValuesForKeysWithDictionary([
+            "date": NSDate(),
+            "usdUah": quoteUsdUah,
+            "eurUah": quoteEurUah,
+            "usdRub": quoteUsdRub,
+            "eurRub": quoteEurRub,
+            "oil": quoteOil
+        ])
+        var error: NSError?
+        if !context.save(&error) {
+            println("Could not save \(error), \(error!.userInfo)")
         }
     }
     
