@@ -104,6 +104,8 @@ class MainViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
     
+    var reachability: Reachability!
+    
     
     // MARK: - Overridden methods
     
@@ -126,6 +128,14 @@ class MainViewController: UIViewController {
         audioPlayer.numberOfLoops = -1
         audioPlayer.prepareToPlay()
 //        audioPlayer.play()
+        
+        reachability = Reachability(hostName: "query.yahooapis.com")
+        reachability.reachableBlock = {
+            (reach: Reachability!) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.fetchQuotes()
+            }
+        }
         
         // Load quote values.
         var timer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: "fetchQuotes", userInfo: nil, repeats: true)
@@ -177,6 +187,9 @@ class MainViewController: UIViewController {
     // MARK: - Private methods
     
     func fetchQuotes() {
+        if !reachability.isReachable() {
+            return
+        }
         if !shouldFetchTugriksAgain {
             return
         }
@@ -185,6 +198,7 @@ class MainViewController: UIViewController {
         let request = NSURLRequest(URL: url)
         let queue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            println(data)
             if data != nil {
                 let result: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                 if let parsedResults = self.parseJSON(result) {
