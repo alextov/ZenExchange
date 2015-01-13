@@ -105,6 +105,7 @@ class MainViewController: UIViewController {
     var audioPlayer: AVAudioPlayer!
     
     var reachability: Reachability!
+    var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     
     // MARK: - Overridden methods
@@ -142,7 +143,7 @@ class MainViewController: UIViewController {
         var flyingTugriksTimer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "adjustFlyingTugriks", userInfo: nil, repeats: true)
         
         // While these are loading, show some dummy messages to entertain user.
-        showDummyResults()
+        loadQuotes()
         fetchQuotes()
         
         initFlyingTugriks()
@@ -207,13 +208,32 @@ class MainViewController: UIViewController {
                     let euroQuote = parsedResults.valueForKey("EUR\(symbol)=X") as? Double ?? 0.0
                     let oilQuote = parsedResults.valueForKey("BZQ15.NYM") as? Double ?? 0.0
                     self.showResults(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
+                    self.saveQuotes(dollarQuote: dollarQuote, euroQuote: euroQuote, oilQuote: oilQuote)
                 } else {
-                    self.showDummyResults()
+                    self.loadQuotes()
                 }
             } else {
-                self.showDummyResults()
+                self.loadQuotes()
             }
             self.shouldFetchTugriksAgain = true
+        }
+    }
+    
+    func saveQuotes(dollarQuote dollar: Double, euroQuote euro: Double, oilQuote oil: Double) {
+        defaults.setDouble(dollar, forKey: "dollarQuote")
+        defaults.setDouble(euro, forKey: "euroQuote")
+        defaults.setDouble(oil, forKey: "oilQuote")
+        defaults.synchronize()
+    }
+    
+    func loadQuotes() {
+        let dollarQuote = defaults.objectForKey("dollarQuote") as? Double
+        let euroQuote = defaults.objectForKey("euroQuote") as? Double
+        let oilQuote = defaults.objectForKey("oilQuote") as? Double
+        if dollarQuote == nil || euroQuote == nil || oilQuote == nil {
+            self.showDummyResults()
+        } else {
+            self.showResults(dollarQuote: dollarQuote!, euroQuote: euroQuote!, oilQuote: oilQuote!)
         }
     }
     
