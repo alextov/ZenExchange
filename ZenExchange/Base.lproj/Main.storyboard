@@ -33,8 +33,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact">
+                                        <variation key="heightClass=compact" misplaced="YES">
                                             <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                            <rect key="frame" x="101" y="50" width="0.0" height="0.0"/>
                                         </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="226" width="600" height="215"/>
@@ -57,9 +58,12 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95K-Jp-lCy" userLabel="Supporting text">
                                         <rect key="frame" x="14" y="91" width="173" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="101" y="50" width="0.0" height="0.0"/>
+                                        </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="214" y="441" width="173" height="21"/>
                                         </variation>
@@ -165,9 +169,12 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeP-nF-3pT" userLabel="Supporting text">
                                         <rect key="frame" x="14" y="91" width="173" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="101" y="50" width="0.0" height="0.0"/>
+                                        </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="214" y="441" width="173" height="21"/>
                                         </variation>
@@ -351,9 +358,12 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNi-ne-rV2" userLabel="Supporting text">
                                         <rect key="frame" x="14" y="91" width="173" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="101" y="50" width="0.0" height="0.0"/>
+                                        </variation>
                                         <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="214" y="441" width="173" height="21"/>
                                         </variation>
@@ -481,7 +491,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BJ-H6-rsQ" userLabel="Ukrainian flag">
                                 <rect key="frame" x="133" y="20" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="XDh-sx-FcX"/>
+                                    <constraint firstAttribute="height" constant="100" id="XDh-sx-FcX">
+                                        <variation key="heightClass=compact" constant="80"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="80"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" secondItem="7BJ-H6-rsQ" secondAttribute="height" multiplier="1:1" id="vWa-zd-pkF"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="UA">
@@ -530,7 +544,7 @@
                             <constraint firstItem="our-ao-ynK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Ism-hj-SWW"/>
                             <constraint firstItem="hvx-lT-cTO" firstAttribute="width" secondItem="aMi-q5-9Dz" secondAttribute="width" id="Kno-pI-rXw"/>
                             <constraint firstItem="XPP-FN-jVH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kp2-wI-ca3">
-                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="XPP-FN-jVH" firstAttribute="centerY" secondItem="lKl-ha-fqe" secondAttribute="centerY" id="MIs-Df-u1h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WmT-w1-T4E" secondAttribute="trailing" constant="-16" id="NQP-Dk-I9R"/>

@@ -198,7 +198,7 @@ class MainViewController: UIViewController {
         let request = NSURLRequest(URL: url)
         let queue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            println(data)
+//            println(data)
             if data != nil {
                 let result: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                 if let parsedResults = self.parseJSON(result) {
