@@ -18,6 +18,7 @@ class LogTableViewCell: UITableViewCell {
     @IBOutlet weak var labelRubEur: UILabel!
     @IBOutlet weak var labelUsdOil: UILabel!
     
+
     // MARK: - Overridden methods
     
     override func awakeFromNib() {
@@ -29,6 +30,17 @@ class LogTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+
+    // MARK: - Private methods
+    
+    func fillValues(#quoteUahUsd: Double, quoteUahEur: Double, quoteRubUsd: Double, quoteRubEur: Double, quoteUsdOil: Double) {
+        labelUahUsd.text = String(format: "%.2f", quoteUahUsd)
+        labelUahEur.text = String(format: "%.2f", quoteUahEur)
+        labelRubUsd.text = String(format: "%.2f", quoteRubUsd)
+        labelRubEur.text = String(format: "%.2f", quoteRubEur)
+        labelUsdOil.text = String(format: "%.2f", quoteUsdOil)
     }
 
 }

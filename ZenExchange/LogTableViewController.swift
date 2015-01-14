@@ -75,10 +75,15 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kReuseCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kReuseCellIdentifier, forIndexPath: indexPath) as LogTableViewCell
         
         if let record = records[indexPath.row] as? Record {
-            cell.textLabel!.text = record.dateAsString
+            cell.fillValues(
+                quoteUahUsd: record.usdUah as? Double ?? 0.0,
+                quoteUahEur: record.eurUah as? Double ?? 0.0,
+                quoteRubUsd: record.usdRub as? Double ?? 0.0,
+                quoteRubEur: record.eurRub as? Double ?? 0.0,
+                quoteUsdOil: record.oil as? Double ?? 0.0)
         }
         
         return cell
