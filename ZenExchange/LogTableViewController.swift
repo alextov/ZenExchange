@@ -50,15 +50,46 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func clearButtonTapped(sender: AnyObject) {
+        var alert = UIAlertController(title: "Подтвердите", message: "Действительно очистить все сохраненные данные?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Очистить", style: .Destructive, handler: {
+            _ in
+            self.clearCoreData()
+            self.records = []
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Не очищать", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     
     // MARK: - Private methods
     
     func fetchFromCoreData() -> [NSManagedObject]? {
         let context = CoreDataManager.sharedInstance.managedObjectContext!
         let request = NSFetchRequest(entityName: "Record")
+        
         var error: NSError?
         let results = context.executeFetchRequest(request, error: &error) as? [NSManagedObject]
         return results
+    }
+    
+    func clearCoreData() {
+        let context = CoreDataManager.sharedInstance.managedObjectContext!
+        let request = NSFetchRequest(entityName: "Record")
+        request.includesPropertyValues = false // only fetch the managedObjectID
+        
+        var error: NSError?
+        if let results = context.executeFetchRequest(request, error: &error) {
+            for record in results {
+                context.deleteObject(record as NSManagedObject)
+            }
+        }
+        
+        error = nil
+        if !context.save(&error) {
+            println("Could not clear \(error), \(error!.userInfo)")
+        }
     }
     
     

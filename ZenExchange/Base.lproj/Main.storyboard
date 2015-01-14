@@ -986,7 +986,11 @@
                                 <action selector="swipeWasDetected:" destination="El6-iT-KFS" id="3eN-RZ-QJI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Очистить" id="Yyu-A1-vt6"/>
+                        <barButtonItem key="rightBarButtonItem" title="Очистить" id="Yyu-A1-vt6">
+                            <connections>
+                                <action selector="clearButtonTapped:" destination="El6-iT-KFS" id="Vnp-YG-sSl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="8UU-7v-Orx" id="bP2-Tx-6RT"/>
