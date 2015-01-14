@@ -23,6 +23,7 @@
                                 <color key="backgroundColor" red="0.1137254902" green="1" blue="0.16862745100000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="v3g-q8-VYi"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="VFg-jR-HvE"/>
                                 </connections>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMi-q5-9Dz" userLabel="Spacer">
@@ -33,6 +34,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="JOs-F5-EB4"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="4Dn-j2-2cH"/>
                                 </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-w1-T4E" userLabel="Spacer">
@@ -43,6 +45,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="GZO-AK-lf1"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="tbM-xT-FRk"/>
                                 </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvx-lT-cTO" userLabel="Spacer">
@@ -53,6 +56,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="sCC-0S-z2c"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="yQB-eN-j90"/>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BJ-H6-rsQ" userLabel="Ukrainian flag">
@@ -70,6 +74,7 @@
                                 </state>
                                 <connections>
                                     <action selector="ukrainianFlagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EWA-82-XJJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="FsK-vK-frZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L2-w9-LLe" userLabel="Russian flag">
@@ -82,6 +87,7 @@
                                 </state>
                                 <connections>
                                     <action selector="russianFlagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGO-XC-OaT"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="qW4-sB-m27"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKl-ha-fqe" userLabel="UAH per USD wrapper">
@@ -221,6 +227,7 @@
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="APu-5f-nf4"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="54j-vu-EPG"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPP-FN-jVH" userLabel="(pivot) UAH per EUR wrapper">
@@ -383,6 +390,7 @@
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="mB8-9n-3iU"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="fmH-cr-bQX"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-DX-Ri8" userLabel="USD per barel wrapper">
@@ -515,6 +523,7 @@
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="i9o-co-9tq" appends="YES" id="GJM-tR-Vo4"/>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="bnc-Z5-IxR"/>
                                 </connections>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="наш интернет пожрал долгоносик" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-FW-vXa" userLabel="Obsolete data notification">
@@ -522,6 +531,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="omr-0r-oRd" appends="YES" id="w9t-x1-TKd"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -762,8 +774,236 @@
                         <action selector="backgroundTapped:" destination="BYZ-38-t0r" id="f6l-eP-YLH"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="omr-0r-oRd">
+                    <connections>
+                        <segue destination="8y4-Mk-L4U" kind="presentation" modalTransitionStyle="flipHorizontal" id="aEb-Nh-EXm"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1465.5" y="318.75"/>
+            <point key="canvasLocation" x="1504" y="318"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V18-nh-hhc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8y4-Mk-L4U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNh-CI-bty">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="El6-iT-KFS" kind="relationship" relationship="rootViewController" id="FAL-jl-FX9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pN4-Ec-btT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2260" y="318"/>
+        </scene>
+        <!--It went like this-->
+        <scene sceneID="Xfq-gw-vVz">
+            <objects>
+                <viewController id="El6-iT-KFS" customClass="LogTableViewController" customModule="ZenExchange" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="8UU-7v-Orx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogTableViewCellReuseIdentifier" rowHeight="60" id="NBg-a3-8qT" customClass="LogTableViewCell" customModule="ZenExchange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NBg-a3-8qT" id="pGn-cj-Qzr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2N-Rh-w68" userLabel="UahUsd">
+                                            <rect key="frame" x="8" y="8" width="53" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="53" id="7Ls-Yv-GVc"/>
+                                                <constraint firstAttribute="height" constant="21" id="zL7-Px-5Kt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="₴ за $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvB-Al-3rB">
+                                            <rect key="frame" x="14" y="37" width="41" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0s-Te-Ueb" userLabel="Spacer">
+                                            <rect key="frame" x="61" y="0.0" width="80" height="21"/>
+                                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="3DC-ge-t2F"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgY-Vm-dyB" userLabel="UahEur">
+                                            <rect key="frame" x="141" y="8" width="53" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="JmU-rV-pFx"/>
+                                                <constraint firstAttribute="width" constant="53" id="ZbF-KM-HMV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="₴ за €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x60-Ro-ZwN">
+                                            <rect key="frame" x="147" y="37" width="41" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tt-Xp-Ppt" userLabel="Spacer">
+                                            <rect key="frame" x="194" y="0.0" width="80" height="21"/>
+                                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="wQn-j4-NBS"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-Z6-RZ3" userLabel="RubUsd">
+                                            <rect key="frame" x="274" y="8" width="53" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="53" id="4NW-le-ez6"/>
+                                                <constraint firstAttribute="height" constant="21" id="sKw-Cz-wOT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="₽ за $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwj-Dk-CPl">
+                                            <rect key="frame" x="280" y="37" width="40" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17C-1z-I7e" userLabel="Spacer">
+                                            <rect key="frame" x="327" y="0.0" width="79" height="21"/>
+                                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="o6Y-Ze-Ist"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="en6-Qw-4q3" userLabel="RubEur">
+                                            <rect key="frame" x="406" y="8" width="53" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="6f8-Ai-i6P"/>
+                                                <constraint firstAttribute="width" constant="53" id="iAP-bk-xAD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="₽ за €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3n-bW-JAK">
+                                            <rect key="frame" x="413" y="37" width="40" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMp-po-p8U" userLabel="Spacer">
+                                            <rect key="frame" x="459" y="0.0" width="80" height="21"/>
+                                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="QEn-w0-VOD"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgY-M9-MfQ" userLabel="UsdOil">
+                                            <rect key="frame" x="539" y="8" width="53" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="FJs-mc-AUg"/>
+                                                <constraint firstAttribute="width" constant="53" id="hYT-Lo-Zia"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$ за ●" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fie-Yb-TG3">
+                                            <rect key="frame" x="545" y="37" width="41" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Fie-Yb-TG3" firstAttribute="top" secondItem="dgY-M9-MfQ" secondAttribute="bottom" constant="8" symbolic="YES" id="0lW-Dy-ZWl"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="J3n-bW-JAK" secondAttribute="bottom" id="1ct-Eh-fBU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="x60-Ro-ZwN" secondAttribute="bottom" id="1wV-BH-VCe"/>
+                                        <constraint firstItem="7tt-Xp-Ppt" firstAttribute="leading" secondItem="xgY-Vm-dyB" secondAttribute="trailing" id="2jA-Xr-3gv"/>
+                                        <constraint firstItem="J2N-Rh-w68" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" id="38j-20-FZJ"/>
+                                        <constraint firstItem="17C-1z-I7e" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" constant="-8" id="4iF-2R-vsc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Fie-Yb-TG3" secondAttribute="bottom" id="4pU-W9-pvx"/>
+                                        <constraint firstItem="7tt-Xp-Ppt" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" constant="-8" id="5R1-e0-PJl"/>
+                                        <constraint firstItem="f0s-Te-Ueb" firstAttribute="width" secondItem="7tt-Xp-Ppt" secondAttribute="width" id="AMO-5l-lyZ"/>
+                                        <constraint firstItem="rvB-Al-3rB" firstAttribute="centerX" secondItem="J2N-Rh-w68" secondAttribute="centerX" id="FNs-6N-U6e"/>
+                                        <constraint firstItem="17C-1z-I7e" firstAttribute="leading" secondItem="D4I-Z6-RZ3" secondAttribute="trailing" id="I0h-CV-qZf"/>
+                                        <constraint firstItem="J3n-bW-JAK" firstAttribute="top" secondItem="en6-Qw-4q3" secondAttribute="bottom" constant="8" symbolic="YES" id="IK1-aJ-9ff"/>
+                                        <constraint firstItem="dgY-M9-MfQ" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" id="NgZ-YJ-okK"/>
+                                        <constraint firstItem="D4I-Z6-RZ3" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" id="O9d-eF-q2m"/>
+                                        <constraint firstItem="x60-Ro-ZwN" firstAttribute="top" secondItem="xgY-Vm-dyB" secondAttribute="bottom" constant="8" symbolic="YES" id="PCq-eS-QoF"/>
+                                        <constraint firstItem="xgY-Vm-dyB" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" id="Pd7-BU-Kfu"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Mwj-Dk-CPl" secondAttribute="bottom" id="VLh-97-edA"/>
+                                        <constraint firstItem="VMp-po-p8U" firstAttribute="leading" secondItem="en6-Qw-4q3" secondAttribute="trailing" id="aHK-8h-Vhn"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rvB-Al-3rB" secondAttribute="bottom" id="c4u-6H-ENc"/>
+                                        <constraint firstItem="dgY-M9-MfQ" firstAttribute="leading" secondItem="VMp-po-p8U" secondAttribute="trailing" id="cEP-ij-KMv"/>
+                                        <constraint firstItem="xgY-Vm-dyB" firstAttribute="leading" secondItem="f0s-Te-Ueb" secondAttribute="trailing" id="dlt-IH-K0g"/>
+                                        <constraint firstItem="en6-Qw-4q3" firstAttribute="leading" secondItem="17C-1z-I7e" secondAttribute="trailing" id="gL6-BM-7k7"/>
+                                        <constraint firstItem="Mwj-Dk-CPl" firstAttribute="centerX" secondItem="D4I-Z6-RZ3" secondAttribute="centerX" id="gry-vq-Ffy"/>
+                                        <constraint firstItem="VMp-po-p8U" firstAttribute="width" secondItem="17C-1z-I7e" secondAttribute="width" id="hqh-fw-kLg"/>
+                                        <constraint firstItem="J2N-Rh-w68" firstAttribute="leading" secondItem="pGn-cj-Qzr" secondAttribute="leadingMargin" id="kbQ-Cl-O11"/>
+                                        <constraint firstItem="x60-Ro-ZwN" firstAttribute="centerX" secondItem="xgY-Vm-dyB" secondAttribute="centerX" id="m72-ql-XDc"/>
+                                        <constraint firstItem="en6-Qw-4q3" firstAttribute="centerX" secondItem="J3n-bW-JAK" secondAttribute="centerX" id="oCA-lS-j87"/>
+                                        <constraint firstItem="D4I-Z6-RZ3" firstAttribute="leading" secondItem="7tt-Xp-Ppt" secondAttribute="trailing" id="oUp-5l-d57"/>
+                                        <constraint firstItem="dgY-M9-MfQ" firstAttribute="trailing" secondItem="pGn-cj-Qzr" secondAttribute="trailingMargin" id="pBj-SL-aet"/>
+                                        <constraint firstItem="Fie-Yb-TG3" firstAttribute="centerX" secondItem="dgY-M9-MfQ" secondAttribute="centerX" id="pvG-1J-QWH"/>
+                                        <constraint firstItem="VMp-po-p8U" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" constant="-8" id="rgL-zr-Jug"/>
+                                        <constraint firstItem="rvB-Al-3rB" firstAttribute="top" secondItem="J2N-Rh-w68" secondAttribute="bottom" constant="8" symbolic="YES" id="rkt-MF-wjk"/>
+                                        <constraint firstItem="Mwj-Dk-CPl" firstAttribute="top" secondItem="D4I-Z6-RZ3" secondAttribute="bottom" constant="8" symbolic="YES" id="tKa-Z8-q6R"/>
+                                        <constraint firstItem="17C-1z-I7e" firstAttribute="width" secondItem="7tt-Xp-Ppt" secondAttribute="width" id="u4F-QK-8Xg"/>
+                                        <constraint firstItem="f0s-Te-Ueb" firstAttribute="leading" secondItem="J2N-Rh-w68" secondAttribute="trailing" id="vml-fw-w2P"/>
+                                        <constraint firstItem="f0s-Te-Ueb" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" constant="-8" id="yeZ-gP-Boc"/>
+                                        <constraint firstItem="en6-Qw-4q3" firstAttribute="top" secondItem="pGn-cj-Qzr" secondAttribute="topMargin" id="zXF-hU-fte"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="Szm-bm-R0h" appends="YES" id="H2c-nJ-I0c"/>
+                                    </connections>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelRubEur" destination="en6-Qw-4q3" id="JGN-2N-pRR"/>
+                                    <outlet property="labelRubUsd" destination="D4I-Z6-RZ3" id="caA-fL-AnJ"/>
+                                    <outlet property="labelUahEur" destination="xgY-Vm-dyB" id="n5C-pm-g6W"/>
+                                    <outlet property="labelUahUsd" destination="J2N-Rh-w68" id="EcJ-lV-hUr"/>
+                                    <outlet property="labelUsdOil" destination="dgY-M9-MfQ" id="4SO-Bo-7uf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Szm-bm-R0h" appends="YES" id="k81-YI-7mb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="It went like this" id="qY2-JC-1Gj">
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="yqt-Ad-gwh">
+                            <connections>
+                                <action selector="swipeWasDetected:" destination="El6-iT-KFS" id="3eN-RZ-QJI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Очистить" id="Yyu-A1-vt6">
+                            <connections>
+                                <action selector="clearButtonTapped:" destination="El6-iT-KFS" id="Vnp-YG-sSl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="8UU-7v-Orx" id="bP2-Tx-6RT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qIK-1d-izg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Szm-bm-R0h">
+                    <connections>
+                        <action selector="swipeWasDetected:" destination="El6-iT-KFS" id="8lN-z2-YRd"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3003" y="315"/>
         </scene>
     </scenes>
     <resources>
