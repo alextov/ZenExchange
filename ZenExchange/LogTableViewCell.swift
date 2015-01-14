@@ -12,6 +12,11 @@ let kReuseCellIdentifier = "LogTableViewCellReuseIdentifier"
 
 class LogTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelUahUsd: UILabel!
+    @IBOutlet weak var labelUahEur: UILabel!
+    @IBOutlet weak var labelRubUsd: UILabel!
+    @IBOutlet weak var labelRubEur: UILabel!
+    @IBOutlet weak var labelUsdOil: UILabel!
     
     // MARK: - Overridden methods
     
