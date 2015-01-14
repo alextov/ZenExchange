@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class LogTableViewController: UIViewController, UITableViewDelegate {
+class LogTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var records: NSArray!
@@ -21,6 +21,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -30,14 +31,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate {
             self.records = records
         }
     }
-
-    /*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-    */
+    
 
     /*
     // MARK: - Navigation
@@ -77,6 +71,10 @@ class LogTableViewController: UIViewController, UITableViewDelegate {
     
     // MARK: - Delegated methods
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
@@ -87,6 +85,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier(kReuseCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
         if let record = records[indexPath.row] as? Record {
+            println(record.date)
             cell.textLabel!.text = dateToString(record.date)
         }
         
