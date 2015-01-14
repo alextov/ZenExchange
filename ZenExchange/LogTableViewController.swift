@@ -61,13 +61,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         return results
     }
     
-    func dateToString(date: NSDate) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .ShortStyle
-        dateFormatter.timeStyle = .ShortStyle
-        return dateFormatter.stringFromDate(date)
-    }
-    
     
     // MARK: - Delegated methods
     
@@ -85,8 +78,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier(kReuseCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
         if let record = records[indexPath.row] as? Record {
-            println(record.date)
-            cell.textLabel!.text = dateToString(record.date)
+            cell.textLabel!.text = record.dateAsString
         }
         
         return cell

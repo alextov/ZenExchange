@@ -17,5 +17,14 @@ class Record: NSManagedObject {
     @NSManaged var eurUah: NSNumber
     @NSManaged var eurRub: NSNumber
     @NSManaged var oil: NSNumber
+    
+    var dateAsString: String {
+        get {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = .ShortStyle
+            dateFormatter.timeStyle = .ShortStyle
+            return dateFormatter.stringFromDate(date)
+        }
+    }
 
 }
